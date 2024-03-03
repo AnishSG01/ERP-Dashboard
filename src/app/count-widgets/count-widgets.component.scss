@@ -1,0 +1,215 @@
+
+
+.countWidgets{
+    padding: 0;
+    margin-bottom: 1.5rem;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // gap: 1rem;
+    
+   
+    width: 100%;
+    // border: 2px soild black;
+    // .countCard{
+    //     width: 250px;
+    //     height: 80%;
+    //     background-color: #fff;
+    //     // border: 2px solid red;
+    //     border-radius: 1rem;
+    // }
+    // mat-icon{
+    //     width: 30px;
+    //     height: 30px;
+    //     display: flex;
+    //     align-items: center;
+    //     // justify-content: center;
+    //     background-color: #fff;
+    //     border-radius: 50%;
+    //     cursor: pointer;
+
+    // }
+    
+    
+}
+
+.cntContentDscr{
+    transition: all 1s ease;
+    display: none;
+    
+}
+
+// .slick-next{
+//     color: #000;
+//     background-color: #000;
+// }
+
+.carousel{
+    // background-color: #fff;
+    width: 95%;
+    // border: 2px solid red;
+    
+
+
+    .slide{
+        // border: 3px solid black;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 170px;
+        .slideInner{
+            
+            width: 250px;
+            height: 70%;
+            border-radius: 0.7rem;
+            transition: all 0.5s ;
+
+            .carddscr{
+                display: none;
+            }
+        }
+        
+    }
+    
+}
+
+
+
+.carousel:hover{
+    cursor: pointer;
+}
+
+mat-card-header{
+    font-weight: 600;
+    font-size: 12px;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .countHeaderName{
+        width: 80%;
+        text-align: left;
+        color: rgb(101, 101, 101);
+        font-size: 12px;
+        line-height: 0.7rem;
+        margin: 0;
+    }
+    .countHeaderIcon{
+        font-size: 1.3rem;
+    }
+}
+mat-card-content{
+    font-weight: 900;
+    font-size: 18px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: rgb(47, 47, 47);
+}
+
+mat-card-footer{
+    font-weight: 400;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.countCardContent{
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.5rem;
+}
+
+.countIcon{
+    background-color: rgb(114, 247, 114);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 200;
+    
+    border-radius: 10px;
+}
+
+.countHeaderIcon{
+    width: 20%;
+    text-align: right;
+}
+
+.cntContent{
+    // border: 1px solid red;
+    transition: all 0.5s ;
+}
+.cntCardInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .05rem;
+    // justify-content: right !i;
+}
+
+
+// .slide:hover{
+//     // height: 200%;
+//     // border: 1px solid red;
+//     padding: 0;
+//     .slideInner{
+//         scale: 120%;
+//     }
+
+//     mat-card-header{
+//         margin-top: -0.5rem;
+
+//     }
+
+//     .countHeaderName{
+//         height: fit-content;
+        
+//     }
+    
+//     .cntContent{
+//         translate:220% 0;
+//         // border: 1px solid red;
+//         width: fit-content;
+//         text-align: right;
+
+//     }
+    
+//     .countIcon{
+//         display: none;
+    
+//     }
+//     .cntCardInner{
+//         width: 95%;
+//     }
+//     .cntContentDscr{
+//         display: block;
+//         font-size: 9px;
+//         font-weight: 100;
+//         // translate:-50px 0px;
+//         color: #9ca3a5;
+//         // border: 1px solid red;
+//         // width: 50%;
+//         line-height: 0.6rem;
+//         text-align: justify;
+//         // height: 30%;
+        
+//     }
+    
+// }
+
+// .slideInner:hover{
+//     // margin-bottom: 1rem;
+//     height: 90%;
+//     .carddscr{
+//         margin-top: 0.3rem;
+//         display: block;
+//         font-size: 12px;
+//         font-weight: 500;
+//     }
+// }

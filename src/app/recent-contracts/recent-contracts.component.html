@@ -1,0 +1,306 @@
+<div class="recentContractsSection" style="border-radius: 0 0 1rem 1rem">
+  <div
+    class="mat-elevation-z3"
+    style="border-radius: 0 0 1rem 1rem"
+    [ngClass]="modalOpen ? 'tableBlurred' : ''"
+  >
+    <div class="tableTop" style="border-radius: 0 0 1rem 1rem">
+      <div class="setionHeader">
+        <!-- Recently Created Rental Contracts -->
+        <!-- <button
+          type="button"
+          class="btn"
+          style="
+            background-color: #ececec;
+            color: rgb(125, 118, 207);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            width: 90px;
+            padding: 0;
+          "
+        >
+          <mat-icon class="sideNav-link-icon">delete</mat-icon>Delete
+        </button> -->
+      </div>
+      <!-- <mat-form-field> -->
+      <!-- <mat-label>Search</mat-label> -->
+      <input
+        style="display: none"
+        class="searchbar"
+        (keyup)="applyFilter($event)"
+        placeholder="Ex. Test1"
+        #input
+      />
+      <!-- </mat-form-field> -->
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          matTooltip="Delete Row"
+          matTooltipPosition="below"
+        >
+          <mat-icon class="sideNav-link-icon">delete</mat-icon>
+        </button>
+        <button
+          type="button"
+          matRipple
+          class="btn btn-secondary"
+          (click)="getRecentContracts()"
+          matTooltip="Refresh"
+          matTooltipPosition="below"
+        >
+          <mat-icon class="sideNav-link-icon">refresh</mat-icon>
+        </button>
+        <button type="button" class="btn btn-secondary">
+          <mat-icon class="sideNav-link-icon">toggle_off</mat-icon>
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          matTooltip="View All Records"
+          matTooltipPosition="below"
+        >
+          <mat-icon class="sideNav-link-icon">fullscreen</mat-icon>
+        </button>
+        <button type="button" class="btn btn-secondary">
+          <mat-icon class="sideNav-link-icon">lists</mat-icon>
+        </button>
+        <button type="button" class="btn btn-secondary" matTooltip="Download"
+        matTooltipPosition="below">
+          <mat-icon class="sideNav-link-icon">download</mat-icon>
+        </button>
+      </div>
+    </div>
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      class="table custom-table"
+    >
+      <ng-container matColumnDef="select">
+        <th
+          class="tblheader"
+          mat-header-cell
+          *matHeaderCellDef
+          class="tableTh"
+          style="background-color: #ececec; border: none; width: max-content"
+        >
+          <input type="checkbox" name="" id="" style="height: 100%" />
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <input type="checkbox" name="" id="" />
+        </td>
+      </ng-container>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="tRcno">
+        <th class="tblheader" mat-header-cell *matHeaderCellDef>
+          <div class="fcol2">
+            <span class="thHeader" mat-sort-header>Contract</span>
+            <input
+              class="searchbar"
+              (keyup)="applyFilter($event)"
+              #input
+              style="border: none; width: 100%"
+            />
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.tRcno }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="tMcod">
+        <th class="tblheader" mat-header-cell *matHeaderCellDef>
+          <div class="fcol2">
+            <span class="thHeader" mat-sort-header>Equipment</span>
+            <input
+              class="searchbar"
+              (keyup)="applyFilter($event)"
+              #input
+              style="border: none; width: 100%"
+            />
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.tMcod }}</td>
+      </ng-container>
+
+      <!-- Description Column -->
+      <ng-container matColumnDef="tDsca">
+        <th class="tblheader" mat-header-cell *matHeaderCellDef>
+          <div class="fcol2">
+            <span class="thHeader" mat-sort-header>Description</span>
+            <input
+              class="searchbar"
+              (keyup)="applyFilter($event)"
+              #input
+              style="border: none; width: 100%"
+            />
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.tDsca }}</td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="tIwar">
+        <th
+          class="tblheader"
+          mat-header-cell
+          *matHeaderCellDef
+          style="padding-right: 5px"
+        >
+          <div class="fcol2">
+            <span class="thHeader" mat-sort-header>Warehouse</span>
+            <input
+              class="searchbar"
+              (keyup)="applyFilter($event)"
+              #input
+              style="border: none; width: 100%"
+            />
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.tIwar }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="documents">
+        <th
+          class="tblheader"
+          mat-header-cell
+          *matHeaderCellDef
+          style="width: 3% !important"
+        >
+          <div class="fcol2">
+            <span class="thHeader" mat-sort-header style="border: none"
+              >Docs</span
+            >
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <!-- <button type="button" class="btn btn-primary" (click)="toggleModalOpen()">
+            Launch demo modal
+          </button> -->
+          <mat-icon
+            (click)="toggleModalOpen()"
+            style="
+              cursor: pointer;
+              width: 70%;
+              color: rgb(125, 118, 207);
+              font-size: 1rem;
+              text-align: center;
+            "
+            >visibility</mat-icon
+          >
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="toggleModalOpen()">
+            Launch demo modal
+          </button> -->
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page of users"
+      style="
+        border-radius: 0 0 0.5rem 0.5rem !important;
+        color: rgb(125, 118, 207);
+      "
+    ></mat-paginator>
+  </div>
+</div>
+
+
+<div
+  role="document"
+  *ngIf="modalOpen"
+  style="
+    position: fixed;
+    top: 30px;
+    width: 80% !important;
+    height: 80% !important;
+    left: 10%;
+  "
+>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Documents</h5>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+        (click)="toggleModalOpen()"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" style="height: 30rem !important">
+      <p-galleria
+        [value]="iframes"
+        [responsiveOptions]="responsiveOptions"
+        [containerStyle]="{ 'max-width': '100%' }"
+        [numVisible]="5"
+        style="margin: auto; height: 100% !important"
+      >
+        <ng-template pTemplate="item" let-item>
+          <iframe
+            [src]="item.iframeSrc"
+            style="width: 100%; height: 25rem !important; border: none"
+          ></iframe>
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+          <div
+            class="grid grid-nogutter justify-content-center"
+            style="
+              height: 3rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <mat-icon
+              style="
+                background-color: white;
+                color: black;
+                border-radius: 50%;
+                height: 2rem;
+                width: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+              "
+              >edit</mat-icon
+            >
+          </div>
+        </ng-template>
+      </p-galleria>
+
+    
+    
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-dismiss="modal"
+        (click)="toggleModalOpen()"
+      >
+        Close
+      </button>
+      <button type="button" class="btn btn-primary" (click)="toggleModalOpen()">
+        Ok
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,164 @@
+.dbCardsSection {
+    width: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // padding: 1rem;
+    // padding-left: 0;
+    // padding-right: 0;
+    margin-top: 1.5rem;
+
+    .dbCard {
+        width: 24%;
+        height: 25rem;
+        padding: 0.8rem;
+        border: 1px dashed #efefef;
+        background-color: rgba(13, 167, 89, 0.1) ;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        
+
+        // &:hover{
+        //     background-color: rgba(0, 0, 0, 0.3) !important;
+        //     // transform: scale(0);
+        //     transition: all 0.3s ease;
+        // }
+
+        .dbCardMainHeader {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .dbCardChildHeader {
+            color: rgba(82, 82, 108, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-bottom: 0.5rem;
+            font-size: 14px;
+            line-height: 1.4;
+            letter-spacing: 0.7px;
+
+            mat-icon{
+                margin-right: 0.4rem;
+            }
+        }
+
+        .dbCardCdesc{
+            font-size: 14px;
+            line-height: 1.4;
+            letter-spacing: 0.7px;
+            margin-top: 0.5rem;
+        }
+
+        .dbCardContendRows{
+            margin-top: 0.8rem;
+            .tbDesc{
+                width: 13rem;
+                // border: 1px solid red;
+                
+            }
+            .tbValue, .tbDesc{
+                color: rgba(82, 82, 108, 0.8);
+
+                font-size: 14px;
+                line-height: 1.4;
+                letter-spacing: 0.7px;
+                height: 1.5rem;
+                // border: 1px solid red;
+            }
+            .tbValue{
+                // border: 1px solid red;
+                width: 4rem;
+                text-align: right;
+            }
+        }
+
+        mat-card-actions{
+            height: 2rem;
+            // border: 1px solid red;
+            // margin-top: 0.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // button{
+            //     &:hover ~ .dbCard{
+            //         background-color: black !important;
+            //         // transform: scale(100%);
+            // }
+            // }
+           
+        }
+
+        mat-card-footer{
+            display: flex;
+            align-items: baseline;
+            justify-content: left;
+            padding: 0 1rem;
+            height: 2rem;
+            // border: 1px solid red;
+            gap: 0.3rem;
+            margin-top: 1rem;
+            // margin-bottom: 0.5rem;
+
+            mat-progress-bar{
+                width: 93%;
+                
+            }
+        }
+    }
+
+    
+}
+
+.dbCard:has(.dbCardButton:hover){
+    transition: all 0.5s ;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+.mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: rgb(125, 118, 207);
+}
+
+// .progress-footer {
+//     position: relative;
+//   }
+  
+//   .progress-bar {
+//     width: 100%;
+//   }
+  
+//   .progress-percentage {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     transform: translate(100%, -50%);
+//     padding-right: 8px; /* Adjust as needed */
+//     color: #000; /* Adjust text color as needed */
+//     font-weight: bold; /* Adjust font weight as needed */
+//   }
+  
+
+
+
+// .dbCard:hover{
+//     // .dbCard{
+//         background-color: black;
+//     // }
+// }
+
+  
+  /* Reduce opacity when hovering over the button */
+//   .dbCardButton:hover ~ .dbCard {
+//     opacity: 0.5 ;
+//   }
+
+// .dbCard.hovered {
+//     background-color: black !important;
+//     opacity: 0.5;
+//   }
+

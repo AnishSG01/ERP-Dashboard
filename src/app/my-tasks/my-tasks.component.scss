@@ -1,0 +1,130 @@
+.myTask {
+    width: 90%;
+    height: 100%;
+    background-color: #fff;
+    // border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.8rem;
+    padding-top: 0;
+    cursor: pointer;
+
+    h2 {
+        // border: 1px solid red;
+        height: 2rem;
+        margin-bottom: 0;
+        margin-top: 0.3rem;
+        display: flex;
+        align-items: center;
+        // padding-left: 0.5rem;
+        padding-bottom: 0;
+        font-size: 1.1rem;
+        color: rgb(125, 118, 207);
+    }
+
+}
+
+.actFeedCard {
+    width: 100%;
+    // border: 1px solid red;
+
+    .afHeader {
+        width: 100%;
+        // border: 1px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        height: 3rem;
+        // height: max-content;
+
+        .afheaderIconDiv {
+            width: 15%;
+            // border: 1px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+
+            .afHeaderIcon {
+                width: 90%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                background-color: rgb(169, 219, 255);
+                color: rgb(125, 118, 207);
+                border-radius: 0.3rem;
+            }
+        }
+
+        .afHeaderTitle {
+            width: 65%;
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            // align-items: center;
+            justify-content: left;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            padding-left: 0.3rem;
+
+            .titleName{
+                // border: 1px solid red;
+                font-size: 12px;
+                font-weight: 800;
+                line-height: 0.9rem;
+                // color: #686868;
+            }
+
+            .TaskTimestamp{
+                font-size: 12px;
+                line-height: 0.9rem;
+                color: #9d9d9d;
+                font-weight: 400;
+            }
+        }
+
+        .afHeaderEllipses {
+            width: 8%;
+            border: 1px solid red;
+            height: 1.7rem;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: 2px solid #ececec;
+            border-radius: 15%;
+
+            mat-icon{
+                font-size: 16px;
+                display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+        }
+    }
+}
+
+
+
+.actFeedCard{
+    mat-panel-description{
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+
+
+// .example-headers-align .mat-expansion-panel-header-description {
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+
+//   .example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
+//     margin-left: 8px;
+//   }

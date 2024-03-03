@@ -1,0 +1,15 @@
+{
+  "ti": "infor",
+  "cn": "Test External App",
+  "ci": "infor~h8IC4P-2olyVNB8C-jpv9qe9H3oOBkCHvjVdJxf7U60",
+  "cs": "BNmtiGs0v5cFbGY2O9oIHQO2r4HYsy2O9egEHk6LfMaip56RZnBvonNIN3ltURvNwDhkV5zgpE6iFisTqIXoKg",
+  "iu": "https://alpharck.e-emphasys.com:7443",
+  "pu": "https://alpharck.e-emphasys.com:810/InforIntSTS/",
+  "oa": "connect/authorize",
+  "ot": "connect/token",
+  "or": "connect/revocation",
+  "ev": "B1585437422",
+  "v": "1.0",
+  "saak": "infor#ajE4mhemcJlzfhtQ9aeOeNnO00fEqOiBvztbHp0wHJ6xSSByXFR_Roe3pwubm1iJOfzEnQXfFBF_ObfS-9wflg",
+  "sask": "RnW4yitXib_3GNdW3BO4A5TPJoJv1aZB30KKeKQDt5SJYQFrMmqEDTZuvW3ReYKj49f2Kkvl6itApE5aLNzaVw"
+}

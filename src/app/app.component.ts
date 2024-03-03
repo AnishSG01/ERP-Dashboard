@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+interface sideNavToggle{
+  screenWidth: number;
+  collapsed: boolean;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +11,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ERPDashboard';
+  isSideNavCollapsed =false;
+  screenWidth = 0;
+
+  
+
+  constructor(){}
+
+  
+
+  onToggleSideNav(data:sideNavToggle): void{
+    this.isSideNavCollapsed = data.collapsed;
+    this.screenWidth = data.screenWidth;
+  }
+
+
 }

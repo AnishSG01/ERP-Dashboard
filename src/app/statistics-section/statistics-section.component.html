@@ -1,0 +1,21 @@
+<div class="statisticsContainer">
+    <div class="chartSection mat-elevation-z2" style="width: 50%; display: flex;">
+        <div class="chartDetails">
+            <p class="chartHeading" >Project Cost Breakdown</p>
+            <p class="chdesc">24 Overdue Projects</p>
+            <p><mat-icon style="width: max-content;height: max-content;color: #007bff;font-size: 0.9rem;"> circle</mat-icon> 28% Info 1</p>
+            <p><mat-icon style="width: max-content;height: max-content;color:#dc3545 ;font-size: 0.9rem;"> circle</mat-icon>10% Info 2</p>
+            <p><mat-icon style="width: max-content;height: max-content;color: #28a745;font-size: 0.9rem;"> circle</mat-icon>20% Info 3</p>
+            <p><mat-icon style="width: max-content;height: max-content;color: #17a2b8;font-size: 0.9rem;"> circle</mat-icon>15% Info 4</p>
+        </div>
+        <canvasjs-chart [options]="chartOptions" [styles]="{ height:'100%'}" style="width: 50%;"></canvasjs-chart>    
+    </div> 
+    <div class="chartSection mat-elevation-z2" style="width: 50%; padding-top: 1rem;">
+        <canvasjs-chart [options]="linechartOptions" [styles]="{ height:'85%'}"></canvasjs-chart>
+        <p class="chartHeading" style="width: 100%;margin-top: 1rem;text-align: center;">Company Sales - 2023</p>
+    </div> 
+      
+    
+    
+   
+</div> 

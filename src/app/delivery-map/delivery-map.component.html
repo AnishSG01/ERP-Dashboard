@@ -1,0 +1,12 @@
+<!-- map.component.html -->
+<div id="map" style="height: 400px;"></div>
+
+<form (ngSubmit)="onSubmit(latitude.value, longitude.value)">
+  <label for="latitude">Latitude:</label>
+  <input type="text" id="latitude" name="latitude" #latitude required>
+
+  <label for="longitude">Longitude:</label>
+  <input type="text" id="longitude" name="longitude" #longitude required>
+
+  <button type="submit">Show Location</button>
+</form>
