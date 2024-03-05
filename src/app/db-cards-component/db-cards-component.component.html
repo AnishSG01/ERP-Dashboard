@@ -4,20 +4,20 @@
   <!-- style="color: rgb(104, 11, 11);" -->
 
   <!-- 1 -->
-  <mat-card class="dbCard" style="background-color: rgba(122, 112, 186, 0.1)" >
+  <mat-card class="dbCard" style="background-color: rgba(122, 112, 186, 0.1)">
     <mat-card-header class="dbCardMainHeader"
       >Contracts that need attention</mat-card-header
     >
-    <mat-card-content class="dbCardChildHeader">
+    <mat-card-content class="dbCardChildHeader" *ngIf="!moreDetailsVisble">
       <mat-icon>report</mat-icon>
       <span>Company 850</span>
     </mat-card-content>
-    <mat-card-content class="dbCardCdesc">
+    <mat-card-content class="dbCardCdesc" *ngIf="!moreDetailsVisble">
       This shows you the Rental Contracts that require your attention.
     </mat-card-content>
 
     <mat-card-content class="dbCardContendRows">
-      <table>
+      <table *ngIf="!moreDetailsVisble">
         <tr>
           <td class="tbDesc">Invoicing on Hold</td>
           <td class="tbValue">12</td>
@@ -33,32 +33,98 @@
           <td class="tbValue">7</td>
         </tr>
       </table>
+
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        *ngIf="moreDetailsVisble"
+        class="viewTable"
+      >
+        <span>Invoice on Hold</span>
+        <ng-container matColumnDef="tRcno">
+          <td class="tbDescView" *matHeaderCellDef>Contract</td>
+          <td class="tbValueView" *matCellDef="let row">
+            {{ row.tRcno }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="tIntp">
+          <td class="tbDescView" *matHeaderCellDef>Inv. Type</td>
+          <td class="tbValueView" *matCellDef="let row">
+            {{ row.tIntp }}
+          </td>
+        </ng-container>
+
+        <tr mat-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        hidePageSize="true"
+        [pageSizeOptions]="[8]"
+        style="margin-top: 0; display: none"
+        [ngClass]="moreDetailsVisble ? 'pagVisible' : ''"
+      >
+      </mat-paginator>
     </mat-card-content>
 
-    
-
-    <mat-card-footer >
-      <!-- <mat-progress-bar mode="determinate" value="{{progressBarValue}}"  matBadge="15" matBadgeColor="warn"></mat-progress-bar>
-      <span style="font-weight:500; color:rgb(125, 118, 207)" >{{ progressBarValue }}%</span> -->
-
-      <div class="progress" style="width: 100%;height: 0.7rem;">
-        <div class="progress-bar" role="progressbar" style="width: 25%; background-color: rgb(125, 118, 207);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+    <mat-card-footer *ngIf="!moreDetailsVisble">
+      <div class="progress" style="width: 100%; height: 0.7rem">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          style="width: 25%; background-color: rgb(125, 118, 207)"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          *ngIf="!moreDetailsVisble"
+        >
+          25%
+        </div>
       </div>
     </mat-card-footer>
 
-    <mat-card-actions> 
+    <mat-card-actions>
       <button
-      class="dbCardButton"
-      mat-raised-button
-      color="primary"
-      style="background-color: rgb(125, 118, 207); margin-left: 0.6rem ; "
-      
-    >
-      View More Details
-    </button>
-  </mat-card-actions>
+        class="dbCardButton"
+        mat-raised-button
+        color="primary"
+        style="background-color: rgb(125, 118, 207); margin-left: 0.6rem"
+        (click)="toggleMoreDetailsVisible()"
+        *ngIf="!moreDetailsVisble"
+      >
+        View More Details
+      </button>
 
-    
+      <div class="actionsOnDetailsVisible" *ngIf="moreDetailsVisble">
+        <button
+          mat-button
+          [matMenuTriggerFor]="menu"
+          style="
+            background-color: rgb(125, 118, 207);
+            color: #fff;
+            border-radius: 5px;
+          "
+        ><div style="width: 100%;height: 100%;display: flex;align-items: center;justify-content: space-between;gap: 1rem;">Invoice On Hold<mat-icon>arrow_drop_down</mat-icon></div>
+
+          
+          
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Contracts to be Retrned</button>
+          <button mat-menu-item>Overdue</button>
+        </mat-menu>
+
+        <button
+          class="dbCardButton"
+          mat-raised-button
+          color="primary"
+          style="background-color: rgb(125, 118, 207); margin-left: 0.6rem"
+          (click)="toggleMoreDetailsVisible()"
+        >
+          Back
+        </button>
+      </div>
+    </mat-card-actions>
   </mat-card>
 
   <!-- 2 -->
@@ -72,8 +138,8 @@
       <span>Company 850</span>
     </mat-card-content>
     <mat-card-content class="dbCardCdesc">
-      This shows the details of the Most vs the lowest rented equipments of
-      the total rented equipments.
+      This shows the details of the Most vs the lowest rented equipments of the
+      total rented equipments.
     </mat-card-content>
 
     <mat-card-content class="dbCardContendRows">
@@ -100,20 +166,27 @@
       </table>
     </mat-card-content>
 
-    
-
-    <mat-card-footer >
+    <mat-card-footer>
       <!-- <mat-progress-bar mode="determinate" value="{{progressBarValue}}"></mat-progress-bar>
       <span style="font-weight:500; color:rgb(125, 118, 207)" >{{ progressBarValue }}%</span> -->
 
-      <div class="progress" style="width: 100%;height: 0.7rem;">
-        <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #28a745;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      <div class="progress" style="width: 100%; height: 0.7rem">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          style="width: 25%; background-color: #28a745"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          25%
+        </div>
       </div>
     </mat-card-footer>
 
     <mat-card-actions>
       <button
-      class="dbCardButton"
+        class="dbCardButton"
         mat-raised-button
         color="primary"
         style="background-color: #28a745; margin-left: 0.6rem"
@@ -134,7 +207,8 @@
       <span>Company 850</span>
     </mat-card-content>
     <mat-card-content class="dbCardCdesc">
-      This shows you the Customers that are regularly renting equipments and completing the payments in time.
+      This shows you the Customers that are regularly renting equipments and
+      completing the payments in time.
     </mat-card-content>
 
     <mat-card-content class="dbCardContendRows">
@@ -160,21 +234,28 @@
         </tr>
       </table>
     </mat-card-content>
- 
-    
 
-    <mat-card-footer >
+    <mat-card-footer>
       <!-- <mat-progress-bar mode="determinate" value="{{progressBarValue}}"></mat-progress-bar>
       <span style="font-weight:500; color:rgb(125, 118, 207)" >{{ progressBarValue }}%</span> -->
 
-      <div class="progress" style="width: 100%;height: 0.7rem;">
-        <div class="progress-bar" role="progressbar" style="width: 25%; background-color: rgb(125, 118, 207);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      <div class="progress" style="width: 100%; height: 0.7rem">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          style="width: 25%; background-color: rgb(125, 118, 207)"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          25%
+        </div>
       </div>
     </mat-card-footer>
 
     <mat-card-actions>
       <button
-      class="dbCardButton"
+        class="dbCardButton"
         mat-raised-button
         color="primary"
         style="background-color: rgb(125, 118, 207); margin-left: 0.6rem"
@@ -182,12 +263,11 @@
         View More Details
       </button>
     </mat-card-actions>
-    
   </mat-card>
 
   <!-- 4 -->
 
-  <mat-card class="dbCard" >
+  <mat-card class="dbCard">
     <mat-card-header class="dbCardMainHeader"
       >Most Reserved Equipments</mat-card-header
     >
@@ -217,34 +297,39 @@
         </tr>
 
         <tr>
-            <td class="tbDesc">Equipment 4</td>
-            <td class="tbValue">7</td>
-          </tr>
-
-          
+          <td class="tbDesc">Equipment 4</td>
+          <td class="tbValue">7</td>
+        </tr>
       </table>
     </mat-card-content>
 
-    
-
-    <mat-card-footer >
+    <mat-card-footer>
       <!-- <mat-progress-bar mode="determinate" value="{{progressBarValue}}"></mat-progress-bar>
       <span style="font-weight:500; color:rgb(125, 118, 207)" >{{ progressBarValue }}%</span> -->
 
-      <div class="progress" style="width: 100%;height: 0.7rem;">
-        <div class="progress-bar" role="progressbar" style="width: 25%; background-color: #28a745;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      <div class="progress" style="width: 100%; height: 0.7rem">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          style="width: 25%; background-color: #28a745"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          25%
+        </div>
       </div>
     </mat-card-footer>
 
-    <mat-card-actions> 
+    <mat-card-actions>
       <button
-      class="dbCardButton"
-      mat-raised-button
-      color="primary"
-      style="background-color: #28a745; margin-left: 0.6rem"
-    >
-      View More Details
-    </button>
-  </mat-card-actions>
+        class="dbCardButton"
+        mat-raised-button
+        color="primary"
+        style="background-color: #28a745; margin-left: 0.6rem"
+      >
+        View More Details
+      </button>
+    </mat-card-actions>
   </mat-card>
 </div>

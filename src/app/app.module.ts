@@ -21,6 +21,8 @@ import { InvoiceOnHoldComponentComponent } from './invoice-on-hold-component/inv
 import { DbCardsComponentComponent } from './db-cards-component/db-cards-component.component';
 import { CreateRentalContractComponent } from './create-rental-contract/create-rental-contract.component';
 import { StatisticsSectionComponent } from './statistics-section/statistics-section.component';
+import { ViewAllRecentContractsCompComponent } from './view-all-recent-contracts-comp/view-all-recent-contracts-comp.component';
+import { ViewAttachementsComponentComponent } from './view-attachements-component/view-attachements-component.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { StatisticsSectionComponent } from './statistics-section/statistics-sect
     DbCardsComponentComponent,
     CreateRentalContractComponent,
     StatisticsSectionComponent,
+    ViewAllRecentContractsCompComponent,
+    ViewAttachementsComponentComponent,
     
   ],
   imports: [

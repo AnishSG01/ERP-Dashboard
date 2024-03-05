@@ -13,13 +13,13 @@
         height: 25rem;
         padding: 0.8rem;
         border: 1px dashed #efefef;
-        background-color: rgba(13, 167, 89, 0.1) ;
+        background-color: rgba(13, 167, 89, 0.1);
         cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        
-        
+
+
 
         // &:hover{
         //     background-color: rgba(0, 0, 0, 0.3) !important;
@@ -43,42 +43,71 @@
             line-height: 1.4;
             letter-spacing: 0.7px;
 
-            mat-icon{
+            mat-icon {
                 margin-right: 0.4rem;
             }
         }
 
-        .dbCardCdesc{
+        .dbCardCdesc {
             font-size: 14px;
             line-height: 1.4;
             letter-spacing: 0.7px;
             margin-top: 0.5rem;
         }
 
-        .dbCardContendRows{
+        .dbCardContendRows {
             margin-top: 0.8rem;
-            .tbDesc{
+            // border: 1px solid red;
+            background: transparent;
+
+            .tbDesc,
+            .tbDescView {
                 width: 13rem;
                 // border: 1px solid red;
-                
+
             }
-            .tbValue, .tbDesc{
+
+            .tbValue,
+            .tbDesc {
                 color: rgba(82, 82, 108, 0.8);
 
                 font-size: 14px;
                 line-height: 1.4;
                 letter-spacing: 0.7px;
                 height: 1.5rem;
+
+
                 // border: 1px solid red;
             }
-            .tbValue{
+
+            .tbValue {
                 // border: 1px solid red;
                 width: 4rem;
                 text-align: right;
             }
+
+            .tbValueView {
+                width: 4rem;
+            }
+
+            .tbDescView,
+            .tbValueView {
+                color: rgba(82, 82, 108, 0.8);
+
+                font-size: 14px;
+                // line-height: 1.4;
+                letter-spacing: 0.7px;
+                // height: 1rem !important;
+                background-color: rgba(110, 100, 176, 0.1);
+                // border: 1px solid red;
+            }
+
+            .tbDescView{
+                background-color: rgba(20, 19, 23, 0.1) !important;
+            }
         }
 
-        mat-card-actions{
+        mat-card-actions {
             height: 2rem;
             // border: 1px solid red;
             // margin-top: 0.8rem;
@@ -92,10 +121,10 @@
             //         // transform: scale(100%);
             // }
             // }
-           
+
         }
 
-        mat-card-footer{
+        mat-card-footer {
             display: flex;
             align-items: baseline;
             justify-content: left;
@@ -106,59 +135,80 @@
             margin-top: 1rem;
             // margin-bottom: 0.5rem;
 
-            mat-progress-bar{
+            mat-progress-bar {
                 width: 93%;
-                
+
             }
         }
     }
 
-    
+
 }
 
-.dbCard:has(.dbCardButton:hover){
-    transition: all 0.5s ;
+.dbCard:has(.dbCardButton:hover) {
+    transition: all 0.5s;
     background-color: rgba(0, 0, 0, 0.4) !important;
 }
+
+.viewTable:has(.dbCardButton:hover) {
+    transition: all 0.5s;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+
+
 .mat-mdc-progress-bar {
     --mdc-linear-progress-active-indicator-color: rgb(125, 118, 207);
 }
 
-// .progress-footer {
-//     position: relative;
-//   }
-  
-//   .progress-bar {
-//     width: 100%;
-//   }
-  
-//   .progress-percentage {
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     transform: translate(100%, -50%);
-//     padding-right: 8px; /* Adjust as needed */
-//     color: #000; /* Adjust text color as needed */
-//     font-weight: bold; /* Adjust font weight as needed */
-//   }
-  
+.mat-mdc-row,
+.mdc-data-table__row,
+.cdk-row {
+    height: 1.5rem;
+}
+
+
+.mat-mdc-paginator {
+    // border: 1px solid red;
+    // height: 1.5rem;
+    padding: 0;
+    line-height: 0.2rem;
+    background-color: transparent;
+    color: rgba(82, 82, 108, 0.8);
+
+    font-size: 14px;
+    letter-spacing: 0.7px;
 
 
 
-// .dbCard:hover{
-//     // .dbCard{
-//         background-color: black;
-//     // }
+
+}
+
+mat-card-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagVisible {
+    display: block !important;
+    // letter-spacing: 1rem;
+    display: flex;
+    justify-content: space-between !important;
+    
+}
+
+.actionsOnDetailsVisible{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// ::ng-deep .mat-paginator-range-label{
+//     display: none !important;
 // }
 
-  
-  /* Reduce opacity when hovering over the button */
-//   .dbCardButton:hover ~ .dbCard {
-//     opacity: 0.5 ;
-//   }
-
-// .dbCard.hovered {
-//     background-color: black !important;
-//     opacity: 0.5;
-//   }
-
+::ng-deep .mat-mdc-paginator-range-label{
+    text-align: right;
+    margin: 0 !important;
+}

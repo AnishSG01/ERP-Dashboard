@@ -1,0 +1,21 @@
+.viewAttachementsSection{
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // gap: 1rem;
+
+    .gallerySection{
+        width: 40%;
+        height: 100%;
+        border: 1px solid red;
+    }
+
+    .docDetailsSection{
+        width: 55%;
+        height: 100%;
+        border: 1px solid red;
+    }
+}

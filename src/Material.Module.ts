@@ -27,6 +27,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { GalleriaModule } from 'primeng/galleria';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
     exports:[
@@ -58,7 +62,11 @@ import { GalleriaModule } from 'primeng/galleria';
         FormsModule,
         CanvasJSAngularChartsModule,
         MatTooltipModule,
-        GalleriaModule
+        GalleriaModule,
+        MatSelectModule,
+        MatDialogModule,
+        DialogModule,
+        ButtonModule
     ]
 })
 

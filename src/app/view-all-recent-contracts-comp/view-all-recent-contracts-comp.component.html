@@ -1,86 +1,7 @@
-<div class="recentContractsSection" style="border-radius: 0 0 1rem 1rem">
-<!-- 
-  <div class="viewAllRecordsModal" *ngIf="viewAllRecords">
-    hello
-    <button (click)="toggleViewAllRecords()">close</button>
-  </div> -->
-<!-- Button trigger modal -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Recently Created Rental Contracts</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <app-view-all-recent-contracts-comp></app-view-all-recent-contracts-comp>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="viewAttachementsModal" tabindex="-1" role="dialog" aria-labelledby="viewAttachementsModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="viewAttachementsModalTitle">Attachements</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <app-view-attachements-component></app-view-attachements-component>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-  <div
-    class="mat-elevation-z3"
-    style="border-radius: 0 0 1rem 1rem"
-    [ngClass]="modalOpen ? 'tableBlurred' : ''"
-  >
-    <div class="tableTop" style="border-radius: 0 0 1rem 1rem">
-      <div class="setionHeader">
-        <!-- Recently Created Rental Contracts -->
-        <!-- <button
-          type="button"
-          class="btn"
-          style="
-            background-color: #ececec;
-            color: rgb(125, 118, 207);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 30px;
-            width: 90px;
-            padding: 0;
-          "
-        >
-          <mat-icon class="sideNav-link-icon">delete</mat-icon>Delete
-        </button> -->
-      </div>
-      <!-- <mat-form-field> -->
-      <!-- <mat-label>Search</mat-label> -->
+<div class="recentContractsSection">
+  <div class="mat-elevation-z1" [ngClass]="modalOpen ? 'tableBlurred' : ''">
+    <div class="tableTop">
+      <div class="setionHeader"></div>
       <input
         style="display: none"
         class="searchbar"
@@ -88,60 +9,80 @@
         placeholder="Ex. Test1"
         #input
       />
-      <!-- <mat-form-field class="example-form-field">
-        <mat-date-range-input
-          [formGroup]="campaignOne"
-          [rangePicker]="campaignOnePicker"
-          [comparisonStart]="campaignTwo.value.start"
-          [comparisonEnd]="campaignTwo.value.end">
-          <input matStartDate placeholder="Start date" formControlName="start">
-          <input matEndDate placeholder="End date" formControlName="end">
-        </mat-date-range-input>
-        <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
-        <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
-      </mat-form-field> -->
 
-      
-
-      
       <!-- </mat-form-field> -->
-      <div class="btn-group" role="group" aria-label="Basic example">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          matTooltip="Delete Row"
-          matTooltipPosition="below"
+
+      <div
+        class="btn-group"
+        role="group"
+        aria-label="Basic example"
+        style="
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: right;
+        "
+      >
+        <div
+          class="innerButtonClass"
+          style="
+            width: max-content;
+            height: 80% !important;
+            background-color: #ececec;
+            border-radius: 0.5rem;
+            /* border: 1px solid red; */
+            display: flex !important;
+            gap: 1rem;
+          "
         >
-          <mat-icon class="sideNav-link-icon">delete</mat-icon>
-        </button>
-        <button
-          type="button"
-          matRipple
-          class="btn btn-secondary"
-          (click)="getRecentContracts()"
-          matTooltip="Refresh"
-          matTooltipPosition="below"
-        >
-          <mat-icon class="sideNav-link-icon">refresh</mat-icon>
-        </button>
-        <button type="button" class="btn btn-secondary">
-          <mat-icon class="sideNav-link-icon">toggle_off</mat-icon>
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          matTooltip="View All Records"
-          matTooltipPosition="below"
-        > 
-          <mat-icon class="sideNav-link-icon"  data-toggle="modal" data-target="#exampleModalLong">fullscreen</mat-icon>
-        </button>
-        <button type="button" class="btn btn-secondary">
-          <mat-icon class="sideNav-link-icon">lists</mat-icon>
-        </button>
-        <button type="button" class="btn btn-secondary" matTooltip="Download"
-        matTooltipPosition="below">
-          <mat-icon class="sideNav-link-icon">download</mat-icon>
-        </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            matTooltip="Delete Row"
+            matTooltipPosition="below"
+            style="background-color: transparent !important;
+            border: none;
+            color: rgb(125, 118, 207);
+            height: 100%;"
+          >
+            <mat-icon class="sideNav-link-icon">delete</mat-icon>
+          </button>
+          <button
+            type="button"
+            matRipple
+            class="btn btn-secondary"
+            (click)="getRecentContracts()"
+            matTooltip="Refresh"
+            matTooltipPosition="below"
+            style="background-color: transparent !important;
+            border: none;
+            color: rgb(125, 118, 207);
+            height: 100%;"
+          >
+            <mat-icon class="sideNav-link-icon">refresh</mat-icon>
+          </button>
+          <button type="button" class="btn btn-secondary" style="background-color: transparent !important;
+          border: none;
+          color: rgb(125, 118, 207);
+          height: 100%;">
+            <mat-icon class="sideNav-link-icon">lists</mat-icon>
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            matTooltip="Download"
+            matTooltipPosition="below"
+            style="background-color: transparent !important;
+            border: none;
+            color: rgb(125, 118, 207);
+            height: 100%;"
+
+(click)="exportToExcel()"
+          >
+            <mat-icon class="sideNav-link-icon">download</mat-icon>
+          </button>
+        </div>
       </div>
     </div>
     <table
@@ -249,10 +190,10 @@
         </th>
         <td mat-cell *matCellDef="let row">
           <!-- <button type="button" class="btn btn-primary" (click)="toggleModalOpen()">
-            Launch demo modal
-          </button> -->
+                Launch demo modal
+              </button> -->
           <mat-icon
-            
+            (click)="toggleModalOpen()"
             style="
               cursor: pointer;
               width: 70%;
@@ -260,15 +201,13 @@
               font-size: 1rem;
               text-align: center;
             "
-             matTooltip="View Attachements"
-             matTooltipPosition="after"
-
-             data-toggle="modal" data-target="#viewAttachementsModal"
+            matTooltip="View Attachements"
+            matTooltipPosition="after"
             >visibility</mat-icon
           >
           <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="toggleModalOpen()">
-            Launch demo modal
-          </button> --> 
+                Launch demo modal
+              </button> -->
         </td>
       </ng-container>
 
@@ -284,8 +223,7 @@
     </table>
 
     <mat-paginator
-      [pageSizeOptions]="[5]"
-      hidePageSize="true"
+      [pageSizeOptions]="[10, 25, 100]"
       aria-label="Select page of users"
       style="
         border-radius: 0 0 0.5rem 0.5rem !important;
@@ -295,24 +233,7 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- view attatchements custom modal code -->
-
-<!-- <div
+<div
   role="document"
   *ngIf="modalOpen"
   style="
@@ -377,9 +298,6 @@
           </div>
         </ng-template>
       </p-galleria>
-
-     
-    
     </div>
     <div class="modal-footer">
       <button
@@ -395,4 +313,4 @@
       </button>
     </div>
   </div>
-</div> -->
+</div>
