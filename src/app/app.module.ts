@@ -23,6 +23,7 @@ import { CreateRentalContractComponent } from './create-rental-contract/create-r
 import { StatisticsSectionComponent } from './statistics-section/statistics-section.component';
 import { ViewAllRecentContractsCompComponent } from './view-all-recent-contracts-comp/view-all-recent-contracts-comp.component';
 import { ViewAttachementsComponentComponent } from './view-attachements-component/view-attachements-component.component';
+import { EquipmentDataTableComponent } from './equipment-data-table/equipment-data-table.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ViewAttachementsComponentComponent } from './view-attachements-componen
     StatisticsSectionComponent,
     ViewAllRecentContractsCompComponent,
     ViewAttachementsComponentComponent,
+    EquipmentDataTableComponent,
     
   ],
   imports: [

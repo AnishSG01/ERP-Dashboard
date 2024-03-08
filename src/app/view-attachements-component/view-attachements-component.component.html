@@ -1,50 +1,134 @@
-
-
 <div class="viewAttachementsSection">
-    <div class="gallerySection">
-        <p-galleria
-        [value]="iframes"
-        [responsiveOptions]="responsiveOptions"
-        [containerStyle]="{ 'max-width': '100%' }"
-        [numVisible]="5"
-        style="margin: auto; height: 100% !important"
+  <div class="gallerySection col-xxl-4 col-md-5 box-col-6 mat-elevation-z1">
+    <p-galleria
+      [value]="iframes"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'max-width': '100%' }"
+      [numVisible]="3"
+      style="margin: auto; height: 100% !important"
+    >
+      <ng-template pTemplate="item" let-item>
+        <iframe
+          [src]="item.iframeSrc"
+          style="
+            width: 100%;
+            height: 17rem !important;
+            border-radius: 0.5rem 0.5rem 0 0;
+            border: none;
+          "
+        ></iframe>
+      </ng-template>
+
+      <ng-template pTemplate="thumbnail" let-item>
+        <div
+          class="grid grid-nogutter justify-content-center thumbnailDiv"
+          style="
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 1rem !important;
+          "
         >
-        <ng-template pTemplate="item" let-item>
           <iframe
-            [src]="item.iframeSrc"
-            style="width: 100%; height: 25rem !important; border: none"
+            src="https://alpharck.e-emphasys.com:9543/ca/api/resources/MDS_GenericDocument-2950-1-LATEST?$token=lp5C4xXRYOsSIFVlwUcMAAk8zxJckddaCQnFcV4jUFQxg9ZmM2egUMso9Fv2GLbWht5%2FnhWE6I4N7%2FENBUmFnYag47kpZJi8ovJvx3yyNOhQFBKw3TK5NzK8vm8ZSe%2B%2F5MCThOsFH8uaKmMihcRnhuQCEU%2FA6tHt73ZzEdKTSHCwowfXhaIq%2FeGpIllrO%2BdoIgvTA7TAhCnhIoGpcvbr%2Bq%2BwNyPq7Uy38%2Fi%2BulYumg7S2KFQ6K4vXVciEf5tGc7lYDPu1iqIEJQJz14wUYGO1g%3D%3D"
+            style="height: 100%; width: 90% !important"
+            frameborder="0"
           ></iframe>
-        </ng-template>
-        <ng-template pTemplate="thumbnail" let-item>
-          <div
-            class="grid grid-nogutter justify-content-center"
-            style="
-              height: 3rem;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <mat-icon
-              style="
-                background-color: white;
-                color: black;
-                border-radius: 50%;
-                height: 2rem;
-                width: 2rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: none;
-              "
-              >edit</mat-icon
-            >
-          </div>
-        </ng-template>
-        </p-galleria>
+        </div>
+      </ng-template>
+    </p-galleria>
+  </div>
+
+  <div class="VAdetailsSection col-xxl-4 col-md-6 box-col-6 mat-elevation-z1">
+    <div class="VADetailHeading">Document Details</div>
+
+    <div class="VADetails">
+      <mat-tab-group
+        class="mat-elevation-z0"
+        style="border-radius: 0.5rem; width: 100%"
+      >
+        <mat-tab label="Properties" style="width: 100%">
+          <table class="propertiesTable" style="width: 100% !important">
+            <tbody>
+              <tr>
+                <td style="padding: 1rem 0 0 0">
+                  <b>Document Type &nbsp;&nbsp;&nbsp;:</b>
+                </td>
+                <td style="padding: 1rem 0 0 0">Document</td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 0 0">
+                  <b>Created By &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;</b>
+                </td>
+                <td class="txt-success">xappsadmin</td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 0 0">
+                  <b>Created Date &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;</b>
+                </td>
+                <td>03/01/2024, 16:28:16</td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 0 0">
+                  <b>Modified By &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;</b>
+                </td>
+                <td>Anish Ghogare</td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 0 0">
+                  <b>Modified Date &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;</b>
+                </td>
+                <td>03/04/2024, 16:56:11</td>
+              </tr>
+              <tr>
+                <td style="padding: 0 0 0 0">
+                  <b>Filename &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;</b>
+                </td>
+                <td>SWO122849_030124115807.pdf</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-tab>
+
+        <mat-tab label="Parameters">
+          <table class="propertiesTable" style="width: 100% !important">
+            <tbody>
+              <tr>
+                <td style="padding: 1rem 0 0 0">
+                  <b>Rental Contract ID &nbsp;&nbsp;&nbsp;:</b>
+                </td>
+                <td style="padding: 1rem 0 0 0">RCA100921</td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Company Number &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;</b>
+                </td>
+                <td class="txt-success">850</td>
+              </tr>
+              <tr>
+                <td>
+                  <b>File Type &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;</b>
+                </td>
+                <td>InforRentalContract</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-tab>
+      </mat-tab-group>
     </div>
 
-    <div class="docDetailsSection">
-        details
+    <div class="VADetailsButtonSection">
+      <button class="VADetailButton btn" style="background-color: #7a70ba">
+        <mat-icon style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 15px;" matTooltip="Download" matTooltipPosition="above">download</mat-icon></button>
+        <button class="VADetailButton btn" style="background-color: #146c43">
+        <mat-icon style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 15px;" matTooltip="Send in E-mail" matTooltipPosition="above">mail</mat-icon></button>
+        <button class="VADetailButton btn" style="background-color: #48a3d7">
+          <mat-icon style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 15px;" matTooltip="Print" matTooltipPosition="above">print</mat-icon>
+      </button>
+      <button class="VADetailButton btn" style="background-color: rgb(255, 60, 60)">
+        <mat-icon style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 15px;" matTooltip="Delete" matTooltipPosition="above">delete</mat-icon>
+      </button>
     </div>
+  </div>
 </div>

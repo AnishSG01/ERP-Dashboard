@@ -44,4 +44,11 @@ export class CreateRentalContractComponent {
     this.third = false;
     this.fourth = true;
   }
+
+  showAddLinesTab() {
+    const addLinesTab = document.getElementById('addLines-tab');
+    if (addLinesTab) {
+      addLinesTab.click();
+    }
+  }
 }

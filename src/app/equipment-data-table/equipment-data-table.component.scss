@@ -1,0 +1,17 @@
+.eqpdataTableSection{
+    height: 23rem !important;
+    // width: 100%;
+    // border: 1px solid red;
+    overflow-y: scroll;
+}
+
+.eqpdataTableSection::-webkit-scrollbar {
+    display: none;
+}
+
+.tblheader {
+    background-color: #ececec !important;
+    height: 50px;
+    border: none !important;
+    color: #61686b !important;
+}

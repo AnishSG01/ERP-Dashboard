@@ -31,10 +31,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
+import { NgxExtendedPdfViewerModule } from "ngx-extended-pdf-viewer";
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
     exports:[
         MatInputModule,
+        NgxExtendedPdfViewerModule,
+        MatCheckboxModule,
         MatIconModule,
         MatToolbarModule,
         MatMenuModule,

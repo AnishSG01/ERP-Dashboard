@@ -20,14 +20,15 @@ export class DbCardsComponentComponent implements OnInit {
     'tRcno',
     'tIntp'
   ]
-  dataSource!: MatTableDataSource<any>
+  dataSource!: MatTableDataSource<any>;
+  invHoldCnt !: number;
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
 
 
   ngOnInit (): void {
-    this.getContractsOnHold()
-    console.log(this.dataSource)
+    this.getContractsOnHold();
+    this.getContractsOnHoldCount();
   }
 
   getContractsOnHold () {
@@ -35,6 +36,15 @@ export class DbCardsComponentComponent implements OnInit {
       next: res => {
         this.dataSource = new MatTableDataSource(res)
         this.dataSource.paginator = this.paginator
+      },
+      error: console.log
+    })
+  }
+
+  getContractsOnHoldCount () {
+    this._invoiceOnHoldService.getInvoiceOnHold().subscribe({
+      next: res => {
+        this.invHoldCnt = res
       },
       error: console.log
     })

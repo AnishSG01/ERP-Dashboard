@@ -76,47 +76,337 @@
           <p class="rightTabHeader">
             Select Equipment
             <mat-divider></mat-divider>
+
+            <app-equipment-data-table></app-equipment-data-table>
           </p>
 
-          <app-recent-quotations></app-recent-quotations>
+          <!-- <app-recent-quotations></app-recent-quotations> -->
           <div class="actionsSection">
-            <button matTooltip="Info about the action" class="CRCNextButton" (click)="showSecond()">
+            <button
+              matTooltip="Info about the action"
+              class="CRCNextButton"
+              (click)="showSecond()"
+            >
               Next <mat-icon>keyboard_tab</mat-icon>
             </button>
           </div>
         </div>
 
         <div class="rightTabs" *ngIf="second">
-            <p class="rightTabHeader">
-                Add Details
-                <mat-divider></mat-divider>
-              </p>
-          <div class="actionsSection" style="margin-top: 0">
-            <button class="CRCNextButton" (click)="showThird()">
-              Next <mat-icon>keyboard_tab</mat-icon>
-            </button>
+          <div class="rightTabHeader">
+            <div class="selectedEqpSection">
+              <div class="selectedEqpHead">Equipment in use :</div>
+
+              <div class="selectedEqp">
+                <table class="selectedEqpInner">
+                  <tr>
+                    <td>Equipment : RCA101989</td>
+                    <td>Serial : A-10</td>
+                  </tr>
+
+                  <tr>
+                    <td>Manufacturer : GM</td>
+                    <td>Warehouse : WH01</td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="selectedEqpButtonSection">
+                <button
+                  style="
+                    width: 90%;
+                    background-color: transparent;
+                    border: 2px dotted rgb(210, 210, 210);
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: rgb(158, 158, 158);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 0.6rem;
+                  "
+                >
+                  View
+                </button>
+              </div>
+            </div>
+
+            <div class="cntAndLines">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="contractDetails-tab"
+                    data-toggle="tab"
+                    href="#contractDetails"
+                    role="tab"
+                    aria-controls="contractDetails"
+                    aria-selected="true"
+                    >Contract Details</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    id="addLines-tab"
+                    data-toggle="tab"
+                    href="#addLines"
+                    role="tab"
+                    aria-controls="addLines"
+                    aria-selected="false"
+                    >Add Lines</a
+                  >
+                </li>
+              </ul>
+
+              <div class="tab-content" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="contractDetails"
+                  role="tabpanel"
+                  aria-labelledby="contractDetails-tab"
+                >
+                  <div class="cntDetailsContent">
+                    <div class="detailsRequired">
+
+                      <div class="inputetails" style="margin-top: 0.8rem">
+                        <div class="col-sm-6 inputDetSection">
+                          <label
+                            class="form-label"
+                            for="exampleFormControlInput1"
+                            >Start Date
+                            <span style="color: rgb(240, 29, 29)"
+                              >*</span
+                            ></label
+                          >
+                          <input
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            type="date"
+                            style="width: 90%; height: 1.5rem !important"
+                          />
+                        </div>
+
+                        <div class="col-sm-6 inputDetSection">
+                          <label
+                            class="form-label"
+                            for="exampleFormControlInput1"
+                            >End Date
+                            <span style="color: rgb(240, 29, 29)"
+                              >*</span
+                            ></label
+                          >
+                          <input
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            type="date"
+                            style="width: 90%; height: 1.5rem !important"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="inputetails">
+                        <div class="col-sm-6 inputDetSection">
+                          <label
+                            class="form-label"
+                            for="exampleFormControlInput1"
+                            >Customer
+                            <span style="color: rgb(240, 29, 29)"
+                              >*</span
+                            ></label
+                          >
+                          <input
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            type="text"
+                            style="width: 90%; height: 1.5rem !important"
+                          />
+                        </div>
+
+                        <div class="col-sm-6 inputDetSection">
+                          <label
+                            class="form-label"
+                            for="exampleFormControlInput1"
+                            >Customer PO
+                          </label>
+                          <input
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            type="text"
+                            style="width: 90%; height: 1.5rem !important"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="inputetails">
+                        <div class="col-sm-11 inputDetSection">
+                          <label
+                            class="form-label"
+                            for="exampleFormControlInput1"
+                            >Text
+                          </label>
+                          <input
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            type="text"
+                            style="width: 100%; height: 1.5rem !important"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="defaulDetails">
+                      <p style="padding-left: 1rem;margin-top: 0.8rem;">Default</p>
+                        <div class="inputetails" >
+                          <div class="col-sm-6 inputDetSection">
+                            <label
+                              class="form-label"
+                              for="exampleFormControlInput1"
+                              >Contract No. :
+                              <span style="color: rgb(240, 29, 29)"
+                                >*</span
+                              ></label
+                            >
+                            <input
+                              class="form-control"
+                              id="exampleFormControlInput1"
+                              type="text"
+                              disabled="true"
+                              value="RCA101989"
+                              style="
+                                width: 90%;
+                                height: 1.5rem !important;
+                                font-size: 0.8rem;
+                                color: #495057;
+                              "
+                            />
+                          </div>
+
+                        <div class="col-sm-6 inputDetSection">
+                          <label
+                            class="form-label"
+                            for="exampleFormControlInput1"
+                            >Contract Type :
+                            </label
+                          >
+                          <input
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            type="text"
+                            disabled="true"
+                            value="Rent to Rent"
+                            style="
+                              width: 90%;
+                              height: 1.5rem !important;
+                              font-size: 0.8rem;
+                              color: #495057;
+                            "
+                          />
+                        </div>
+                      </div>
+
+                      <div class="inputetails">
+                        <div class="col-sm-6 inputDetSection">
+                          <label
+                            class="form-label"
+                            for="exampleFormControlInput1"
+                            >Rental Sub Type
+                            <span style="color: rgb(240, 29, 29)"
+                              >*</span
+                            ></label
+                          >
+                          <input
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            type="text"
+                            disabled="true"
+                            value="LEASE"
+                            style="
+                              width: 90%;
+                              height: 1.5rem !important;
+                              font-size: 0.8rem;
+                              color: #495057;
+                            "
+                          />
+                        </div>
+
+                        <div class="col-sm-6 inputDetSection">
+                          <label
+                            class="form-label"
+                            for="exampleFormControlInput1"
+                            >Rental Office
+                            <span style="color: rgb(240, 29, 29)"
+                              >*</span
+                            ></label
+                          >
+                          <input
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            type="text"
+                            disabled="true"
+                            value="ER001"
+                            style="
+                              width: 90%;
+                              height: 1.5rem !important;
+                              font-size: 0.8rem;
+                              color: #495057;
+                            "
+                          />
+                        </div>
+                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                  <div class="actionsSection" style="margin-top: 0; border-top: 2px dotted rgb(210, 210, 210); padding-top: 0.5rem;">
+                    <button class="CRCNextButton" (click)="showAddLinesTab()">
+                      Next
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="addLines"
+                  role="tabpanel"
+                  aria-labelledby="addLines-tab"
+                >
+                  <div class="cntDetailsContent">Lines details</div>
+
+                  <div class="actionsSection" style="margin-top: 0">
+                    <button class="CRCNextButton" (click)="showThird()">
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="rightTabs" *ngIf="third">
           <div class="uploadDocument">
-            <p class="rightTabHeader" style="line-height: 0.5rem;">
-                Upload Document
-                <mat-divider></mat-divider>
-              </p>
+            <p class="rightTabHeader" style="line-height: 0.5rem">
+              Upload Document
+              <mat-divider></mat-divider>
+            </p>
             <div class="fileUp">
-                <mat-icon>upload_file</mat-icon>
+              <mat-icon>upload_file</mat-icon>
               <input type="file" onchange="console.log(event.target.files)" />
             </div>
           </div>
 
           <div class="uploadImage">
-            <p class="rightTabHeader" style="margin-top: 1rem; line-height: 0.5rem;">
-                Upload Image
-                <mat-divider></mat-divider>
-              </p>
+            <p
+              class="rightTabHeader"
+              style="margin-top: 1rem; line-height: 0.5rem"
+            >
+              Upload Image
+              <mat-divider></mat-divider>
+            </p>
             <div class="fileUp">
-                <mat-icon>image</mat-icon>
+              <mat-icon>image</mat-icon>
               <input type="file" onchange="console.log(event.target.files)" />
             </div>
           </div>
@@ -128,13 +418,12 @@
         </div>
 
         <div class="rightTabs" *ngIf="fourth">
-            <p class="rightTabHeader">
-                Submit
-                <mat-divider></mat-divider>
-              </p>
+          <p class="rightTabHeader">
+            Submit
+            <mat-divider></mat-divider>
+          </p>
         </div>
       </div>
     </div>
   </div>
 </div>
-

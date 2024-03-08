@@ -1,58 +1,101 @@
 <div class="recentContractsSection" style="border-radius: 0 0 1rem 1rem">
-<!-- 
+  <!-- 
   <div class="viewAllRecordsModal" *ngIf="viewAllRecords">
     hello
     <button (click)="toggleViewAllRecords()">close</button>
   </div> -->
-<!-- Button trigger modal -->
+  <!-- Button trigger modal -->
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Recently Created Rental Contracts</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <app-view-all-recent-contracts-comp></app-view-all-recent-contracts-comp>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModalLong"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true"
+    style="
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(15px);
+      
+    "
+  >
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">
+            Recently Created Rental Contracts
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="overflow-y: scroll;height: 30rem;">
+          <app-view-all-recent-contracts-comp></app-view-all-recent-contracts-comp>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-
-<div class="modal fade" id="viewAttachementsModal" tabindex="-1" role="dialog" aria-labelledby="viewAttachementsModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="viewAttachementsModalTitle">Attachements</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <app-view-attachements-component></app-view-attachements-component>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+  <div
+    class="modal fade"
+    id="viewAttachementsModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="viewAttachementsModalTitle"
+    aria-hidden="true"
+    style="
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(15px);
+    "
+  >
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5
+            class="modal-title"
+            id="viewAttachementsModalTitle"
+            style="font-size: 1rem; font-weight: 600"
+          >
+            Attachements
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div
+          class="modal-body"
+          style="background-color: #f4f7f9; padding: 0 !important"
+        >
+          <app-view-attachements-component></app-view-attachements-component>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            Ok
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
 
   <div
     class="mat-elevation-z3"
@@ -101,9 +144,6 @@
         <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
       </mat-form-field> -->
 
-      
-
-      
       <!-- </mat-form-field> -->
       <div class="btn-group" role="group" aria-label="Basic example">
         <button
@@ -132,14 +172,23 @@
           class="btn btn-secondary"
           matTooltip="View All Records"
           matTooltipPosition="below"
-        > 
-          <mat-icon class="sideNav-link-icon"  data-toggle="modal" data-target="#exampleModalLong">fullscreen</mat-icon>
+        >
+          <mat-icon
+            class="sideNav-link-icon"
+            data-toggle="modal"
+            data-target="#exampleModalLong"
+            >fullscreen</mat-icon
+          >
         </button>
         <button type="button" class="btn btn-secondary">
           <mat-icon class="sideNav-link-icon">lists</mat-icon>
         </button>
-        <button type="button" class="btn btn-secondary" matTooltip="Download"
-        matTooltipPosition="below">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          matTooltip="Download"
+          matTooltipPosition="below"
+        >
           <mat-icon class="sideNav-link-icon">download</mat-icon>
         </button>
       </div>
@@ -252,7 +301,6 @@
             Launch demo modal
           </button> -->
           <mat-icon
-            
             style="
               cursor: pointer;
               width: 70%;
@@ -260,15 +308,15 @@
               font-size: 1rem;
               text-align: center;
             "
-             matTooltip="View Attachements"
-             matTooltipPosition="after"
-
-             data-toggle="modal" data-target="#viewAttachementsModal"
+            matTooltip="View Attachements"
+            matTooltipPosition="after"
+            data-toggle="modal"
+            data-target="#viewAttachementsModal"
             >visibility</mat-icon
           >
           <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="toggleModalOpen()">
             Launch demo modal
-          </button> --> 
+          </button> -->
         </td>
       </ng-container>
 
@@ -294,21 +342,6 @@
     ></mat-paginator>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- view attatchements custom modal code -->
 
