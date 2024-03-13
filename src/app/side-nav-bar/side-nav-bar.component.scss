@@ -134,3 +134,45 @@
     }
     
 }
+
+
+.profile{
+    width: 100%;
+    // height: 50%;
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-evenly;
+    margin: auto;
+    padding: 0 !important;
+    gap: 0.5rem;
+    // transition: all 2s ease;
+
+    .userIconDiv{
+        
+        border: 2px solid #fff;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        .userIcon{
+            font-size: 4rem;
+            color: rgba(255, 255, 255, .8);
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    p{
+        // border: 1px solid red;
+        color: rgba(255, 255, 255, .8);
+    }
+}

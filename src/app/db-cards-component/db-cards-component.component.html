@@ -1,335 +1,349 @@
 <div class="dbCardsSection">
-  <!-- <app-invoice-on-hold-component></app-invoice-on-hold-component> -->
+  <div
+    id="carouselExampleControls"
+    class="carousel slide"
+    data-ride="carousel"
+    data-interval="false"
+    style="width: 100%"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div
+          class="car-item-inner"
+          style="
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+          "
+        >
+          <!-- 1 -->
+          <mat-card class="dbCard">
+            <mat-card-header class="dbCardMainHeader"
+              >Contracts that need attention</mat-card-header
+            >
+            <mat-card-content
+              class="dbCardChildHeader"
+              *ngIf="!moreDetailsVisble"
+            >
+              <mat-icon>report</mat-icon>
+              <span>Company 850</span>
+            </mat-card-content>
+            <mat-card-content class="dbCardCdesc" *ngIf="!moreDetailsVisble">
+              This shows you the Rental Contracts that require your attention.
+            </mat-card-content>
+            <mat-card-content class="dbCardContendRows">
+              <table *ngIf="!moreDetailsVisble">
+                <tr>
+                  <td class="tbDesc">Invoicing on Hold</td>
+                  <td class="tbValue">{{ invHoldCnt }}</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">Contract about to end</td>
+                  <td class="tbValue">5</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">Overdue</td>
+                  <td class="tbValue">7</td>
+                </tr>
+              </table>
+              <table
+                mat-table
+                [dataSource]="dataSource"
+                *ngIf="moreDetailsVisble"
+                class="viewTable"
+              >
+                <span>Invoice on Hold</span>
+                <ng-container matColumnDef="tRcno">
+                  <td class="tbDescView" *matHeaderCellDef>Contract</td>
+                  <td class="tbValueView" *matCellDef="let row">
+                    {{ row.tRcno }}
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="tIntp">
+                  <td class="tbDescView" *matHeaderCellDef>Inv. Type</td>
+                  <td class="tbValueView" *matCellDef="let row">
+                    {{ row.tIntp }}
+                  </td>
+                </ng-container>
+                <tr mat-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr
+                  mat-row
+                  *matRowDef="let row; columns: displayedColumns"
+                ></tr>
+              </table>
+              <mat-paginator
+                hidePageSize="true"
+                [pageSizeOptions]="[8]"
+                style="margin-top: 0; display: none"
+                [ngClass]="moreDetailsVisble ? 'pagVisible' : ''"
+              >
+              </mat-paginator>
+            </mat-card-content>
+            <mat-card-footer *ngIf="!moreDetailsVisble">
+              <div
+                class="progress"
+                style="width: 100%; height: 0.7rem"
+                matTooltip="25% of the total Contract needs your attention"
+                matTooltipPosition="above"
+              >
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 25%; background-color: rgb(125, 118, 207)"
+                  aria-valuenow="25"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  *ngIf="!moreDetailsVisble"
+                >
+                  25%
+                </div>
+              </div>
+            </mat-card-footer>
+            <mat-card-actions>
+              <button
+                class="dbCardButton"
+                mat-raised-button
+                color="primary"
+                style="
+                  background-color: rgb(125, 118, 207);
+                  margin-left: 0.6rem;
+                "
+                (click)="toggleMoreDetailsVisible()"
+                *ngIf="!moreDetailsVisble"
+              >
+                View More Details
+              </button>
+              <div class="actionsOnDetailsVisible" *ngIf="moreDetailsVisble">
+                <button
+                  mat-button
+                  [matMenuTriggerFor]="menu"
+                  style="
+                    background-color: rgb(125, 118, 207);
+                    color: #fff;
+                    border-radius: 5px;
+                  "
+                >
+                  <div
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      gap: 1rem;
+                    "
+                  >
+                    Invoice On Hold<mat-icon>arrow_drop_down</mat-icon>
+                  </div>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>Contracts to be Retrned</button>
+                  <button mat-menu-item>Overdue</button>
+                </mat-menu>
+                <button
+                  class="dbCardButton"
+                  mat-raised-button
+                  color="primary"
+                  style="
+                    background-color: rgb(125, 118, 207);
+                    margin-left: 0.6rem;
+                  "
+                  (click)="toggleMoreDetailsVisible()"
+                >
+                  Back
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+          <!-- 2 -->
+          <mat-card class="dbCard">
+            <mat-card-header class="dbCardMainHeader"
+              >Most Rented Equipments</mat-card-header
+            >
+            <mat-card-content class="dbCardChildHeader">
+              <mat-icon>stars</mat-icon>
+              <span>Company 850</span>
+            </mat-card-content>
+            <mat-card-content class="dbCardCdesc">
+              This shows the details of the Most vs the lowest rented equipments
+              of the total rented equipments.
+            </mat-card-content>
+            <mat-card-content class="dbCardContendRows">
+              <table>
+                <tr>
+                  <td class="tbDesc">GMC 8500 KOM</td>
+                  <td class="tbValue">6193</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">SAL TR5</td>
+                  <td class="tbValue">4019</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">1032 JE</td>
+                  <td class="tbValue">3992</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">RS12MODEL CAT</td>
+                  <td class="tbValue">3411</td>
+                </tr>
+              </table>
+            </mat-card-content>
+            <mat-card-footer> </mat-card-footer>
+            <mat-card-actions>
+              <button
+                class="dbCardButton"
+                mat-raised-button
+                color="primary"
+                style="background-color: #28a745; margin-left: 0.6rem"
+              >
+                View More Details
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <!-- 3 -->
+          <mat-card class="dbCard">
+            <mat-card-header class="dbCardMainHeader"
+              >Customer Leaderboard</mat-card-header
+            >
+            <mat-card-content class="dbCardChildHeader">
+              <mat-icon> leaderboard </mat-icon>
+              <span>Company 850</span>
+            </mat-card-content>
+            <mat-card-content class="dbCardCdesc">
+              This shows you the Customers that are regularly renting equipments
+              and completing the payments in time.
+            </mat-card-content>
+            <mat-card-content class="dbCardContendRows">
+              <table>
+                <tr>
+                  <td class="tbDesc">Customer 1</td>
+                  <td class="tbValue">12</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">Customer 2</td>
+                  <td class="tbValue">10</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">Customer 3</td>
+                  <td class="tbValue">7</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">Customer 4</td>
+                  <td class="tbValue">5</td>
+                </tr>
+              </table>
+            </mat-card-content>
+            <mat-card-footer> </mat-card-footer>
+            <mat-card-actions>
+              <button
+                class="dbCardButton"
+                mat-raised-button
+                color="primary"
+                style="
+                  background-color: rgb(125, 118, 207);
+                  margin-left: 0.6rem;
+                "
+              >
+                View More Details
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
 
-  <!-- style="color: rgb(104, 11, 11);" -->
+      <div class="carousel-item">
+        <div
+          class="car-item-inner"
+          style="
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+          "
+        >
+          <mat-card class="dbCard">
+            <mat-card-header class="dbCardMainHeader"
+              >Customer Leaderboard</mat-card-header
+            >
+            <mat-card-content class="dbCardChildHeader">
+              <mat-icon> leaderboard </mat-icon>
+              <span>Company 850</span>
+            </mat-card-content>
+            <mat-card-content class="dbCardCdesc">
+              This shows you the Customers that are regularly renting equipments
+              and completing the payments in time.
+            </mat-card-content>
+            <mat-card-content class="dbCardContendRows">
+              <table>
+                <tr>
+                  <td class="tbDesc">Customer 1</td>
+                  <td class="tbValue">12</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">Customer 2</td>
+                  <td class="tbValue">10</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">Customer 3</td>
+                  <td class="tbValue">7</td>
+                </tr>
+                <tr>
+                  <td class="tbDesc">Customer 4</td>
+                  <td class="tbValue">5</td>
+                </tr>
+              </table>
+            </mat-card-content>
+            <mat-card-footer> </mat-card-footer>
+            <mat-card-actions>
+              <button
+                class="dbCardButton"
+                mat-raised-button
+                color="primary"
+                style="
+                  background-color: rgb(125, 118, 207);
+                  margin-left: 0.6rem;
+                "
+              >
+                View More Details
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+        style="width: max-content;height: max-content;margin: auto;"
+      >
+        <!-- <span
+          class="carousel-control-prev-icon"
+          aria-hidden="true"
+          style="background-color: black"
+        ></span> -->
+        <!-- <span class="sr-only">Previous</span> -->
+
+        <mat-icon style="color: black;">arrow_back_ios</mat-icon>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+        style="width: max-content;height: max-content;margin: auto;"
+      >
+        <!-- <span
+          class="carousel-control-next-icon"
+          aria-hidden="true"
+          style="background-color: black"
+        ></span> -->
+        <!-- <span class="sr-only">Next</span> -->
+        <mat-icon style="color: black;">arrow_forward_ios</mat-icon>
+      </a>
+    </div>
+  </div>
 
   <!-- 1 -->
-  <mat-card class="dbCard" style="background-color: rgba(122, 112, 186, 0.1)">
-    <mat-card-header class="dbCardMainHeader"
-      >Contracts that need attention</mat-card-header
-    >
-    <mat-card-content class="dbCardChildHeader" *ngIf="!moreDetailsVisble">
-      <mat-icon>report</mat-icon>
-      <span>Company 850</span>
-    </mat-card-content>
-    <mat-card-content class="dbCardCdesc" *ngIf="!moreDetailsVisble">
-      This shows you the Rental Contracts that require your attention.
-    </mat-card-content>
-
-    <mat-card-content class="dbCardContendRows">
-      <table *ngIf="!moreDetailsVisble">
-        <tr>
-          <td class="tbDesc">Invoicing on Hold</td>
-          <td class="tbValue">{{invHoldCnt}}</td>
-        </tr> 
-
-        <tr>
-          <td class="tbDesc">Contract about to end</td>
-          <td class="tbValue">5</td>
-        </tr>
-
-        <tr>
-          <td class="tbDesc">Overdue</td>
-          <td class="tbValue">7</td>
-        </tr>
-      </table>
-
-      <table
-        mat-table
-        [dataSource]="dataSource"
-        *ngIf="moreDetailsVisble"
-        class="viewTable"
-      >
-        <span>Invoice on Hold</span>
-        <ng-container matColumnDef="tRcno">
-          <td class="tbDescView" *matHeaderCellDef>Contract</td>
-          <td class="tbValueView" *matCellDef="let row">
-            {{ row.tRcno }}
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="tIntp">
-          <td class="tbDescView" *matHeaderCellDef>Inv. Type</td>
-          <td class="tbValueView" *matCellDef="let row">
-            {{ row.tIntp }}
-          </td>
-        </ng-container>
-
-        <tr mat-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-      </table>
-      <mat-paginator
-        hidePageSize="true"
-        [pageSizeOptions]="[8]"
-        style="margin-top: 0; display: none"
-        [ngClass]="moreDetailsVisble ? 'pagVisible' : ''"
-      >
-      </mat-paginator>
-    </mat-card-content>
-
-    <mat-card-footer *ngIf="!moreDetailsVisble">
-      <div class="progress" style="width: 100%; height: 0.7rem">
-        <div
-          class="progress-bar"
-          role="progressbar"
-          style="width: 25%; background-color: rgb(125, 118, 207)"
-          aria-valuenow="25"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          *ngIf="!moreDetailsVisble"
-        >
-          25%
-        </div>
-      </div>
-    </mat-card-footer>
-
-    <mat-card-actions>
-      <button
-        class="dbCardButton"
-        mat-raised-button
-        color="primary"
-        style="background-color: rgb(125, 118, 207); margin-left: 0.6rem"
-        (click)="toggleMoreDetailsVisible()"
-        *ngIf="!moreDetailsVisble"
-      >
-        View More Details
-      </button>
-
-      <div class="actionsOnDetailsVisible" *ngIf="moreDetailsVisble">
-        <button
-          mat-button
-          [matMenuTriggerFor]="menu"
-          style="
-            background-color: rgb(125, 118, 207);
-            color: #fff;
-            border-radius: 5px;
-          "
-        ><div style="width: 100%;height: 100%;display: flex;align-items: center;justify-content: space-between;gap: 1rem;">Invoice On Hold<mat-icon>arrow_drop_down</mat-icon></div>
-
-          
-          
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>Contracts to be Retrned</button>
-          <button mat-menu-item>Overdue</button>
-        </mat-menu>
-
-        <button
-          class="dbCardButton"
-          mat-raised-button
-          color="primary"
-          style="background-color: rgb(125, 118, 207); margin-left: 0.6rem"
-          (click)="toggleMoreDetailsVisible()"
-        >
-          Back
-        </button>
-      </div>
-    </mat-card-actions>
-  </mat-card>
-
-  <!-- 2 -->
-
-  <mat-card class="dbCard">
-    <mat-card-header class="dbCardMainHeader"
-      >Most Rented Equipments</mat-card-header
-    >
-    <mat-card-content class="dbCardChildHeader">
-      <mat-icon>stars</mat-icon>
-      <span>Company 850</span>
-    </mat-card-content>
-    <mat-card-content class="dbCardCdesc">
-      This shows the details of the Most vs the lowest rented equipments of the
-      total rented equipments.
-    </mat-card-content>
-
-    <mat-card-content class="dbCardContendRows">
-      <table>
-        <tr>
-          <td class="tbDesc">GMC 8500 KOM</td>
-          <td class="tbValue">6193</td>
-        </tr>
-
-        <tr>
-          <td class="tbDesc">SAL TR5</td>
-          <td class="tbValue">4019</td>
-        </tr>
-
-        <tr>
-          <td class="tbDesc">1032 JE</td>
-          <td class="tbValue">3992</td>
-        </tr>
-
-        <tr>
-          <td class="tbDesc">RS12MODEL CAT</td>
-          <td class="tbValue">3411</td>
-        </tr>
-      </table>
-    </mat-card-content>
-
-    <mat-card-footer>
-      <!-- <mat-progress-bar mode="determinate" value="{{progressBarValue}}"></mat-progress-bar>
-      <span style="font-weight:500; color:rgb(125, 118, 207)" >{{ progressBarValue }}%</span> -->
-
-      <div class="progress" style="width: 100%; height: 0.7rem">
-        <div
-          class="progress-bar"
-          role="progressbar"
-          style="width: 25%; background-color: #28a745"
-          aria-valuenow="25"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        >
-          25%
-        </div>
-      </div>
-    </mat-card-footer>
-
-    <mat-card-actions>
-      <button
-        class="dbCardButton"
-        mat-raised-button
-        color="primary"
-        style="background-color: #28a745; margin-left: 0.6rem"
-      >
-        View More Details
-      </button>
-    </mat-card-actions>
-  </mat-card>
-
-  <!-- 3 -->
-
-  <mat-card class="dbCard" style="background-color: rgba(122, 112, 186, 0.1)">
-    <mat-card-header class="dbCardMainHeader"
-      >Customer Leaderboard</mat-card-header
-    >
-    <mat-card-content class="dbCardChildHeader">
-      <mat-icon> leaderboard </mat-icon>
-      <span>Company 850</span>
-    </mat-card-content>
-    <mat-card-content class="dbCardCdesc">
-      This shows you the Customers that are regularly renting equipments and
-      completing the payments in time.
-    </mat-card-content>
-
-    <mat-card-content class="dbCardContendRows">
-      <table>
-        <tr>
-          <td class="tbDesc">Customer 1</td>
-          <td class="tbValue">12</td>
-        </tr>
-
-        <tr>
-          <td class="tbDesc">Customer 2</td>
-          <td class="tbValue">10</td>
-        </tr>
-
-        <tr>
-          <td class="tbDesc">Customer 3</td>
-          <td class="tbValue">7</td>
-        </tr>
-
-        <tr>
-          <td class="tbDesc">Customer 4</td>
-          <td class="tbValue">5</td>
-        </tr>
-      </table>
-    </mat-card-content>
-
-    <mat-card-footer>
-      <!-- <mat-progress-bar mode="determinate" value="{{progressBarValue}}"></mat-progress-bar>
-      <span style="font-weight:500; color:rgb(125, 118, 207)" >{{ progressBarValue }}%</span> -->
-
-      <div class="progress" style="width: 100%; height: 0.7rem">
-        <div
-          class="progress-bar"
-          role="progressbar"
-          style="width: 25%; background-color: rgb(125, 118, 207)"
-          aria-valuenow="25"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        >
-          25%
-        </div>
-      </div>
-    </mat-card-footer>
-
-    <mat-card-actions>
-      <button
-        class="dbCardButton"
-        mat-raised-button
-        color="primary"
-        style="background-color: rgb(125, 118, 207); margin-left: 0.6rem"
-      >
-        View More Details
-      </button>
-    </mat-card-actions>
-  </mat-card>
-
-  <!-- 4 -->
-
- 
 </div>
-
-
-<!-- <mat-card class="dbCard">
-  <mat-card-header class="dbCardMainHeader"
-    >Most Reserved Equipments</mat-card-header
-  >
-  <mat-card-content class="dbCardChildHeader">
-    <mat-icon>event_seat</mat-icon>
-    <span>Company 850</span>
-  </mat-card-content>
-  <mat-card-content class="dbCardCdesc">
-    This shows you the Equipments that have the Most number of reservations.
-  </mat-card-content>
-
-  <mat-card-content class="dbCardContendRows">
-    <table>
-      <tr>
-        <td class="tbDesc">Equipment 1</td>
-        <td class="tbValue">12</td>
-      </tr>
-
-      <tr>
-        <td class="tbDesc">Equipment 2</td>
-        <td class="tbValue">5</td>
-      </tr>
-
-      <tr>
-        <td class="tbDesc">Equipment 3</td>
-        <td class="tbValue">7</td>
-      </tr>
-
-      <tr>
-        <td class="tbDesc">Equipment 4</td>
-        <td class="tbValue">7</td>
-      </tr>
-    </table>
-  </mat-card-content>
-
-  <mat-card-footer>
-    <div class="progress" style="width: 100%; height: 0.7rem">
-      <div
-        class="progress-bar"
-        role="progressbar"
-        style="width: 25%; background-color: #28a745"
-        aria-valuenow="25"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      >
-        25%
-      </div>
-    </div>
-  </mat-card-footer>
-
-  <mat-card-actions>
-    <button
-      class="dbCardButton"
-      mat-raised-button
-      color="primary"
-      style="background-color: #28a745; margin-left: 0.6rem"
-    >
-      View More Details
-    </button>
-  </mat-card-actions>
-</mat-card> -->

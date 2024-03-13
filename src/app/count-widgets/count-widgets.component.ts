@@ -1,4 +1,13 @@
 import { Component} from '@angular/core';
+import { faFileExport } from '@fortawesome/free-solid-svg-icons';
+import { faFileContract } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
+import { faFileCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faFileCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { faFileCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faFileInvoiceDollar } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-count-widgets',
@@ -6,6 +15,16 @@ import { Component} from '@angular/core';
   styleUrls: ['./count-widgets.component.scss']
 })
 export class CountWidgetsComponent {
+  faFileExport = faFileExport;
+  faFileContract = faFileContract;
+  faCalendarCheck = faCalendarCheck;
+  faFileCircleXmark = faFileCircleXmark;
+  faFileCircleCheck=faFileCircleCheck;
+  faFileCircleExclamation=faFileCircleExclamation;
+  faFileArrowDown=faFileArrowDown;
+  faFileInvoiceDollar=faFileInvoiceDollar;
+  faCalendarDays=faCalendarDays;
+
   slides = [
     {
       name: 'Active Contracts',
@@ -75,6 +94,7 @@ export class CountWidgetsComponent {
   slideConfig = {
     slidesToShow: 4,
     slidesToScroll: 4,
+    arrows:false,
     autoplay: true,
     autoplaySpeed: 5000,
     pauseOnHover: true,
@@ -83,7 +103,7 @@ export class CountWidgetsComponent {
       {
         breakpoint: 1400,
         settings: {
-          arrows: true,
+          arrows: false,
           infinite: true,
           slidesToShow: 3, // Corrected property name
           slidesToScroll: 3 // Corrected property name
@@ -92,7 +112,7 @@ export class CountWidgetsComponent {
       {
         breakpoint: 1190,
         settings: {
-          arrows: true,
+          arrows: false,
           infinite: true,
           slidesToShow: 2, // Corrected property name
           slidesToScroll: 2 // Corrected property name
@@ -101,7 +121,7 @@ export class CountWidgetsComponent {
       {
         breakpoint: 700,
         settings: {
-          arrows: true,
+          arrows: false,
           infinite: true,
           slidesToShow: 1, // Corrected property name
           slidesToScroll: 1 // Corrected property name

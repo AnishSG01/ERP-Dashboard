@@ -4,444 +4,436 @@
     #slickModal="slick-carousel"
     [config]="slideConfig"
   >
-    <div class="countWidgets">
-      <ngx-slick-carousel
-        class="carousel"
-        #slickModal="slick-carousel"
-        [config]="slideConfig"
-      >
-        <div ngxSlickItem class="slide">
-          <!-- <div ></div>  -->
-          <mat-card
-            class="slideInner mat-elevation-z1"
-            style="
-              /* background-color: rgb(241, 248, 253); */
-              border: 1px solid rgb(39, 168, 233);
-            "
-            matTooltip="Displays all the active/open Rental Contracts which have a
+    <div ngxSlickItem class="slide">
+      <!-- <div ></div>  -->
+      <mat-card
+        class="slideInner mat-elevation-z1"
+        style="
+          /* background-color: rgb(241, 248, 253); */
+          border: 1px solid rgb(39, 168, 233);
+        "
+        matTooltip="Displays all the active/open Rental Contracts which have a
             model/attachment/part Line(s) delivered but not returned, and
             whose Rental End Date is less than or equal to Current
             Date."
-            matTooltipPosition="below"
-          >
-            <mat-card-header>
-              <span class="countHeaderName"> Contracts to be Returned</span>
-              <mat-icon class="countHeaderIcon">more_vert</mat-icon>
-            </mat-card-header>
+        matTooltipPosition="below"
+      >
+        <mat-card-header>
+          <span class="countHeaderName"> Contracts to be Returned</span>
+          <mat-icon class="countHeaderIcon">more_vert</mat-icon>
+        </mat-card-header>
 
-            <mat-card-content class="countCardContent">
-              <mat-icon
+        <mat-card-content class="countCardContent">
+          <!-- <mat-icon
                 class="countIcon"
                 style="background-color: rgb(39, 168, 233)"
                 >attach_money</mat-icon
-              >
-              <div class="cntCardInner">
-                <span class="cntContentDscr"
-                  >Displays all the active/open Rental Contracts which have a
-                  model/attachment/part Line(s) delivered but not returned, and
-                  whose Rental End Date is less than or equal to Current
-                  Date.</span
-                >
-                <span class="cntContent" style="color: rgb(101, 101, 101)"
-                  >5899</span
-                >
-              </div>
+              > -->
+          <fa-icon
+            [icon]="faFileExport"
+            class="countIcon"
+            style="background-color: rgb(39, 168, 233)"
+          ></fa-icon>
+          <div class="cntCardInner">
+            <span class="cntContentDscr"
+              >Displays all the active/open Rental Contracts which have a
+              model/attachment/part Line(s) delivered but not returned, and
+              whose Rental End Date is less than or equal to Current Date.</span
+            >
+            <span class="cntContent" style="color: rgb(101, 101, 101)"
+              >5899</span
+            >
+          </div>
 
-              <div class="carddscr">
-                <!--     
+          <div class="carddscr">
+            <!--     
               {{ slide.dscr }}
                    -->
-              </div>
-            </mat-card-content>
+          </div>
+        </mat-card-content>
 
-            <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
-          </mat-card>
-        </div>
+        <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
+      </mat-card>
+    </div>
 
-        <div ngxSlickItem class="slide">
-          <!-- <div ></div>  -->
-          <mat-card
-            class="slideInner mat-elevation-z1"
-            style="
-              /* background-color: rgb(254, 249, 238); */
-              border: 1px solid rgb(244, 157, 26);
-            "
-            matTooltip="Displays all active/open Rental Contracts which have
+    <div ngxSlickItem class="slide">
+      <!-- <div ></div>  -->
+      <mat-card
+        class="slideInner mat-elevation-z1"
+        style="
+          /* background-color: rgb(254, 249, 238); */
+          border: 1px solid rgb(244, 157, 26);
+        "
+        matTooltip="Displays all active/open Rental Contracts which have
             model/attachment/part Line(s) linked to delivery and whose
             Start Date is less than or equal to the Current Date."
-            matTooltipPosition="below"
-          >
-            <mat-card-header>
-              <span class="countHeaderName"> Contracts Ready for Delivery</span>
-              <mat-icon class="countHeaderIcon">more_vert</mat-icon>
-            </mat-card-header>
+        matTooltipPosition="below"
+      >
+        <mat-card-header>
+          <span class="countHeaderName"> Contracts Ready for Delivery</span>
+          <mat-icon class="countHeaderIcon">more_vert</mat-icon>
+        </mat-card-header>
 
-            <mat-card-content class="countCardContent">
-              <mat-icon
-                class="countIcon"
-                style="background-color: rgb(244, 157, 26)"
-                >attach_money</mat-icon
-              >
-              <div class="cntCardInner">
-                <span class="cntContentDscr"
-                  >Displays all active/open Rental Contracts which have
-                  model/attachment/part Line(s) linked to delivery and whose
-                  Start Date is less than or equal to the Current Date.</span
-                >
-                <span class="cntContent" style="color: rgb(101, 101, 101)"
-                  >5899</span
-                >
-              </div>
+        <mat-card-content class="countCardContent">
+          <fa-icon
+            [icon]="faFileCircleCheck"
+            class="countIcon"
+            style="background-color: rgb(244, 157, 26)"
+          ></fa-icon>
+          <div class="cntCardInner">
+            <span class="cntContentDscr"
+              >Displays all active/open Rental Contracts which have
+              model/attachment/part Line(s) linked to delivery and whose Start
+              Date is less than or equal to the Current Date.</span
+            >
+            <span class="cntContent" style="color: rgb(101, 101, 101)"
+              >5899</span
+            >
+          </div>
 
-              <div class="carddscr">
-                <!--     
+          <div class="carddscr">
+            <!--     
               {{ slide.dscr }}
                    -->
-              </div>
-            </mat-card-content>
+          </div>
+        </mat-card-content>
 
-            <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
-          </mat-card>
-        </div>
+        <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
+      </mat-card>
+    </div>
 
-        <div ngxSlickItem class="slide">
-          <!-- <div ></div>  -->
-          <mat-card
-            class="slideInner mat-elevation-z1"
-            style="
-              /* background-color: rgb(241, 248, 253); */
-              border: 1px solid rgb(29, 215, 91);
-            "
-            matTooltip="Checks Rental Invoicing Authorization for all the offices of
+    <div ngxSlickItem class="slide">
+      <!-- <div ></div>  -->
+      <mat-card
+        class="slideInner mat-elevation-z1"
+        style="
+          /* background-color: rgb(241, 248, 253); */
+          border: 1px solid rgb(29, 215, 91);
+        "
+        matTooltip="Checks Rental Invoicing Authorization for all the offices of
             user and displays un-invoiced Lines which have Scheduled
             Invoice Date less than or equal to Current Date where Inv.
             Amount is not equal to zero."
-            matTooltipPosition="below"
+        matTooltipPosition="below"
+      >
+        <mat-card-header>
+          <span class="countHeaderName">
+            Invoicing Schedules to be processed</span
           >
-            <mat-card-header>
-              <span class="countHeaderName">
-                Invoicing Schedules to be processed</span
-              >
-              <mat-icon class="countHeaderIcon">more_vert</mat-icon>
-            </mat-card-header>
+          <mat-icon class="countHeaderIcon">more_vert</mat-icon>
+        </mat-card-header>
 
-            <mat-card-content class="countCardContent">
-              <mat-icon
-                class="countIcon"
-                style="background-color: rgb(29, 215, 91)"
-                >attach_money</mat-icon
-              >
-              <div class="cntCardInner">
-                <span class="cntContentDscr"
-                  >Checks Rental Invoicing Authorization for all the offices of
-                  user and displays un-invoiced Lines which have Scheduled
-                  Invoice Date less than or equal to Current Date where Inv.
-                  Amount is not equal to zero.</span
-                >
-                <span class="cntContent" style="color: rgb(101, 101, 101)"
-                  >5899</span
-                >
-              </div>
+        <mat-card-content class="countCardContent">
+          <fa-icon
+            [icon]="faFileArrowDown"
+            class="countIcon"
+            style="background-color: rgb(29, 215, 91)"
+          ></fa-icon>
+          <div class="cntCardInner">
+            <span class="cntContentDscr"
+              >Checks Rental Invoicing Authorization for all the offices of user
+              and displays un-invoiced Lines which have Scheduled Invoice Date
+              less than or equal to Current Date where Inv. Amount is not equal
+              to zero.</span
+            >
+            <span class="cntContent" style="color: rgb(101, 101, 101)"
+              >5899</span
+            >
+          </div>
 
-              <div class="carddscr">
-                <!--     
+          <div class="carddscr">
+            <!--     
               {{ slide.dscr }}
                    -->
-              </div>
-            </mat-card-content>
+          </div>
+        </mat-card-content>
 
-            <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
-          </mat-card>
-        </div>
+        <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
+      </mat-card>
+    </div>
 
-        <div ngxSlickItem class="slide">
-          <!-- <div ></div>  -->
-          <mat-card
-            class="slideInner mat-elevation-z1"
-            style="
-              /* background-color: rgb(241, 248, 253); */
-              border: 1px solid rgb(39, 168, 233);
-            "
-            matTooltip="Displays active/open Demo Contracts which have a
+    <div ngxSlickItem class="slide">
+      <!-- <div ></div>  -->
+      <mat-card
+        class="slideInner mat-elevation-z1"
+        style="
+          /* background-color: rgb(241, 248, 253); */
+          border: 1px solid rgb(39, 168, 233);
+        "
+        matTooltip="Displays active/open Demo Contracts which have a
             model/attachment/part Line(s) of type Demo which have been
             delivered but not returned and whose End Date is less than or
             equal to Current Date."
-            matTooltipPosition="below"
-          >
-            <mat-card-header>
-              <span class="countHeaderName"> Demo Contracts OverDue</span>
-              <mat-icon class="countHeaderIcon">more_vert</mat-icon>
-            </mat-card-header>
+        matTooltipPosition="below"
+      >
+        <mat-card-header>
+          <span class="countHeaderName"> Demo Contracts OverDue</span>
+          <mat-icon class="countHeaderIcon">more_vert</mat-icon>
+        </mat-card-header>
 
-            <mat-card-content class="countCardContent">
-              <mat-icon
-                class="countIcon"
-                style="background-color: rgb(39, 168, 233)"
-                >attach_money</mat-icon
-              >
-              <div class="cntCardInner">
-                <span class="cntContentDscr"
-                  >Displays active/open Demo Contracts which have a
-                  model/attachment/part Line(s) of type Demo which have been
-                  delivered but not returned and whose End Date is less than or
-                  equal to Current Date.</span
-                >
-                <span class="cntContent" style="color: rgb(101, 101, 101)"
-                  >5899</span
-                >
-              </div>
+        <mat-card-content class="countCardContent">
+          <fa-icon
+            [icon]="faFileInvoiceDollar"
+            class="countIcon"
+            style="background-color: rgb(39, 168, 233)"
+          ></fa-icon>
+          <div class="cntCardInner">
+            <span class="cntContentDscr"
+              >Displays active/open Demo Contracts which have a
+              model/attachment/part Line(s) of type Demo which have been
+              delivered but not returned and whose End Date is less than or
+              equal to Current Date.</span
+            >
+            <span class="cntContent" style="color: rgb(101, 101, 101)"
+              >5899</span
+            >
+          </div>
 
-              <div class="carddscr">
-                <!--     
+          <div class="carddscr">
+            <!--     
               {{ slide.dscr }}
                    -->
-              </div>
-            </mat-card-content>
+          </div>
+        </mat-card-content>
 
-            <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
-          </mat-card>
-        </div>
+        <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
+      </mat-card>
+    </div>
 
-        <div ngxSlickItem class="slide">
-          <!-- <div ></div>  -->
-          <mat-card
-            class="slideInner mat-elevation-z1"
-            style="
-              /* background-color: rgb(254, 249, 238); */
-              border: 1px solid rgb(244, 157, 26);
-            "
-            matTooltip="Displays all active/open Demo Contracts which have a
+    <div ngxSlickItem class="slide">
+      <!-- <div ></div>  -->
+      <mat-card
+        class="slideInner mat-elevation-z1"
+        style="
+          /* background-color: rgb(254, 249, 238); */
+          border: 1px solid rgb(244, 157, 26);
+        "
+        matTooltip="Displays all active/open Demo Contracts which have a
             model/attachment/part Line(s) of type Demo which have been
             delivered but not returned and whose End Date is equal to
             Current Date."
-            matTooltipPosition="below"
-          >
-            <mat-card-header>
-              <span class="countHeaderName"> Demo Contracts Due Today</span>
-              <mat-icon class="countHeaderIcon">more_vert</mat-icon>
-            </mat-card-header>
+        matTooltipPosition="below"
+      >
+        <mat-card-header>
+          <span class="countHeaderName"> Demo Contracts Due Today</span>
+          <mat-icon class="countHeaderIcon">more_vert</mat-icon>
+        </mat-card-header>
 
-            <mat-card-content class="countCardContent">
-              <mat-icon
-                class="countIcon"
-                style="background-color: rgb(244, 157, 26)"
-                >attach_money</mat-icon
-              >
-              <div class="cntCardInner">
-                <span class="cntContentDscr"
-                  >Displays all active/open Demo Contracts which have a
-                  model/attachment/part Line(s) of type Demo which have been
-                  delivered but not returned and whose End Date is equal to
-                  Current Date.</span
-                >
-                <span class="cntContent" style="color: rgb(101, 101, 101)"
-                  >5899</span
-                >
-              </div>
+        <mat-card-content class="countCardContent">
+          <fa-icon
+          [icon]="faCalendarDays"
+          class="countIcon"
+          style="background-color: rgb(244, 157, 26)"
+        ></fa-icon>
+          <div class="cntCardInner">
+            <span class="cntContentDscr"
+              >Displays all active/open Demo Contracts which have a
+              model/attachment/part Line(s) of type Demo which have been
+              delivered but not returned and whose End Date is equal to Current
+              Date.</span
+            >
+            <span class="cntContent" style="color: rgb(101, 101, 101)"
+              >5899</span
+            >
+          </div>
 
-              <div class="carddscr">
-                <!--     
+          <div class="carddscr">
+            <!--     
               {{ slide.dscr }}
                    -->
-              </div>
-            </mat-card-content>
+          </div>
+        </mat-card-content>
 
-            <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
-          </mat-card>
-        </div>
+        <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
+      </mat-card>
+    </div>
 
-        <div ngxSlickItem class="slide">
-          <!-- <div ></div>  -->
-          <mat-card
-            class="slideInner mat-elevation-z1"
-            style="
-              /* background-color: rgb(241, 248, 253); */
-              border: 1px solid rgb(29, 215, 91);
-            "
-            matTooltip="Displays all active/open contracts which have un-invoiced
+    <div ngxSlickItem class="slide">
+      <!-- <div ></div>  -->
+      <mat-card
+        class="slideInner mat-elevation-z1"
+        style="
+          /* background-color: rgb(241, 248, 253); */
+          border: 1px solid rgb(29, 215, 91);
+        "
+        matTooltip="Displays all active/open contracts which have un-invoiced
             Lines and whose Scheduled Invoice Date is less than or equal
             to threshold Date. Threshold Date is calculated by adding
             certain number of days (set in the widget) to Current
             Date."
-            matTooltipPosition="below"
-          >
-            <mat-card-header>
-              <span class="countHeaderName"> Active Contracts</span>
-              <mat-icon class="countHeaderIcon">more_vert</mat-icon>
-            </mat-card-header>
+        matTooltipPosition="below"
+      >
+        <mat-card-header>
+          <span class="countHeaderName"> Active Contracts</span>
+          <mat-icon class="countHeaderIcon">more_vert</mat-icon>
+        </mat-card-header>
 
-            <mat-card-content class="countCardContent">
-              <mat-icon
-                class="countIcon"
-                style="background-color: rgb(29, 215, 91)"
-                >attach_money</mat-icon
-              >
-              <div class="cntCardInner">
-                <span class="cntContentDscr"
-                  >Displays all active/open contracts which have un-invoiced
-                  Lines and whose Scheduled Invoice Date is less than or equal
-                  to threshold Date. Threshold Date is calculated by adding
-                  certain number of days (set in the widget) to Current
-                  Date.</span
-                >
-                <span class="cntContent" style="color: rgb(101, 101, 101)"
-                  >5899</span
-                >
-              </div>
+        <mat-card-content class="countCardContent">
+          <fa-icon
+            [icon]="faFileContract"
+            class="countIcon"
+            style="background-color: rgb(29, 215, 91)"
+          ></fa-icon>
+          <div class="cntCardInner">
+            <span class="cntContentDscr"
+              >Displays all active/open contracts which have un-invoiced Lines
+              and whose Scheduled Invoice Date is less than or equal to
+              threshold Date. Threshold Date is calculated by adding certain
+              number of days (set in the widget) to Current Date.</span
+            >
+            <span class="cntContent" style="color: rgb(101, 101, 101)"
+              >5899</span
+            >
+          </div>
 
-              <div class="carddscr">
-                <!--     
+          <div class="carddscr">
+            <!--     
               {{ slide.dscr }}
                    -->
-              </div>
-            </mat-card-content>
+          </div>
+        </mat-card-content>
 
-            <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
-          </mat-card>
-        </div>
+        <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
+      </mat-card>
+    </div>
 
-        <div ngxSlickItem class="slide">
-          <!-- <div ></div>  -->
-          <mat-card
-            class="slideInner mat-elevation-z1"
-            style="
-              /* background-color: rgb(241, 248, 253); */
-              border: 1px solid rgb(39, 168, 233);
-            "
-            matTooltip="Displays all active/open contracts which have any
+    <div ngxSlickItem class="slide">
+      <!-- <div ></div>  -->
+      <mat-card
+        class="slideInner mat-elevation-z1"
+        style="
+          /* background-color: rgb(241, 248, 253); */
+          border: 1px solid rgb(39, 168, 233);
+        "
+        matTooltip="Displays all active/open contracts which have any
             model/attachment/part Line(s) delivered, but have not been
             returned and the End Date is less than Current Date."
-            matTooltipPosition="below"
-          >
-            <mat-card-header>
-              <span class="countHeaderName"> Contracts Not Returned</span>
-              <mat-icon class="countHeaderIcon">more_vert</mat-icon>
-            </mat-card-header>
+        matTooltipPosition="below"
+      >
+        <mat-card-header>
+          <span class="countHeaderName"> Contracts Not Returned</span>
+          <mat-icon class="countHeaderIcon">more_vert</mat-icon>
+        </mat-card-header>
 
-            <mat-card-content class="countCardContent">
-              <mat-icon
-                class="countIcon"
-                style="background-color: rgb(39, 168, 233)"
-                >attach_money</mat-icon
-              >
-              <div class="cntCardInner">
-                <span class="cntContentDscr"
-                  >Displays all active/open contracts which have any
-                  model/attachment/part Line(s) delivered, but have not been
-                  returned and the End Date is less than Current Date.</span
-                >
-                <span class="cntContent" style="color: rgb(101, 101, 101)"
-                  >5899</span
-                >
-              </div>
+        <mat-card-content class="countCardContent">
+          <fa-icon
+            [icon]="faFileExport"
+            class="countIcon"
+            style="background-color: rgb(39, 168, 233)"
+          ></fa-icon>
+          <div class="cntCardInner">
+            <span class="cntContentDscr"
+              >Displays all active/open contracts which have any
+              model/attachment/part Line(s) delivered, but have not been
+              returned and the End Date is less than Current Date.</span
+            >
+            <span class="cntContent" style="color: rgb(101, 101, 101)"
+              >5899</span
+            >
+          </div>
 
-              <div class="carddscr">
-                <!--     
+          <div class="carddscr">
+            <!--     
               {{ slide.dscr }}
                    -->
-              </div>
-            </mat-card-content>
+          </div>
+        </mat-card-content>
 
-            <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
-          </mat-card>
-        </div>
+        <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
+      </mat-card>
+    </div>
 
-        <div ngxSlickItem class="slide">
-          <!-- <div ></div>  -->
-          <mat-card
-            class="slideInner mat-elevation-z1"
-            style="
-              /* background-color: rgb(254, 249, 238); */
-              border: 1px solid rgb(244, 157, 26);
-            "
-            matTooltip="Displays all invoices of Rental origin, which are present in
+    <div ngxSlickItem class="slide">
+      <!-- <div ></div>  -->
+      <mat-card
+        class="slideInner mat-elevation-z1"
+        style="
+          /* background-color: rgb(254, 249, 238); */
+          border: 1px solid rgb(244, 157, 26);
+        "
+        matTooltip="Displays all invoices of Rental origin, which are present in
             Open Entries, and have passed the Due Date, where Balance
             Amount is not equal to zero."
-            matTooltipPosition="below"
-          >
-            <mat-card-header>
-              <span class="countHeaderName">Invoices OverDue and not Paid</span>
-              <mat-icon class="countHeaderIcon">more_vert</mat-icon>
-            </mat-card-header>
+        matTooltipPosition="below"
+      >
+        <mat-card-header>
+          <span class="countHeaderName">Invoices OverDue and not Paid</span>
+          <mat-icon class="countHeaderIcon">more_vert</mat-icon>
+        </mat-card-header>
+ 
+        <mat-card-content class="countCardContent">
+          <fa-icon
+            [icon]="faFileCircleXmark"
+            class="countIcon"
+            style="background-color: rgb(244, 157, 26)"
+          ></fa-icon>
+          <div class="cntCardInner">
+            <span class="cntContentDscr"
+              >Displays all invoices of Rental origin, which are present in Open
+              Entries, and have passed the Due Date, where Balance Amount is not
+              equal to zero.</span
+            >
+            <span class="cntContent" style="color: rgb(101, 101, 101)"
+              >5899</span
+            >
+          </div>
 
-            <mat-card-content class="countCardContent">
-              <mat-icon
-                class="countIcon"
-                style="background-color: rgb(244, 157, 26)"
-                >attach_money</mat-icon
-              >
-              <div class="cntCardInner">
-                <span class="cntContentDscr"
-                  >Displays all invoices of Rental origin, which are present in
-                  Open Entries, and have passed the Due Date, where Balance
-                  Amount is not equal to zero.</span
-                >
-                <span class="cntContent" style="color: rgb(101, 101, 101)"
-                  >5899</span
-                >
-              </div>
-
-              <div class="carddscr">
-                <!--     
+          <div class="carddscr">
+            <!--     
               {{ slide.dscr }}
                    -->
-              </div>
-            </mat-card-content>
+          </div>
+        </mat-card-content>
 
-            <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
-          </mat-card>
-        </div>
+        <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
+      </mat-card>
+    </div>
 
-        <div ngxSlickItem class="slide">
-          <!-- <div ></div>  -->
-          <mat-card
-            class="slideInner mat-elevation-z1"
-            style="
-              /* background-color: rgb(241, 248, 253); */
-              border: 1px solid rgb(29, 215, 91);
-            "
-            matTooltip="Displays the insurance that are expiring in X Days. The
+    <div ngxSlickItem class="slide">
+      <!-- <div ></div>  -->
+      <mat-card
+        class="slideInner mat-elevation-z1"
+        style="
+          /* background-color: rgb(241, 248, 253); */
+          border: 1px solid rgb(29, 215, 91);
+        "
+        matTooltip="Displays the insurance that are expiring in X Days. The
             number of days is set in the widget configuration."
-            matTooltipPosition="below"
-          >
-            <mat-card-header>
-              <span class="countHeaderName">Customer Insurance Expiring</span>
-              <mat-icon class="countHeaderIcon">more_vert</mat-icon>
-            </mat-card-header>
+        matTooltipPosition="below"
+      >
+        <mat-card-header>
+          <span class="countHeaderName">Customer Insurance Expiring</span>
+          <mat-icon class="countHeaderIcon">more_vert</mat-icon>
+        </mat-card-header>
 
-            <mat-card-content class="countCardContent">
-              <mat-icon
-                class="countIcon"
-                style="background-color: rgb(29, 215, 91)"
-                >attach_money</mat-icon
-              >
-              <div class="cntCardInner">
-                <span class="cntContentDscr"
-                  >Displays the insurance that are expiring in X Days. The
-                  number of days is set in the widget configuration</span
-                >
-                <span class="cntContent" style="color: rgb(101, 101, 101)"
-                  >5899</span
-                >
-              </div>
+        <mat-card-content class="countCardContent">
+          <fa-icon
+            [icon]="faFileCircleExclamation"
+            class="countIcon"
+            style="background-color: rgb(29, 215, 91)"
+          ></fa-icon>
+          <div class="cntCardInner">
+            <span class="cntContentDscr"
+              >Displays the insurance that are expiring in X Days. The number of
+              days is set in the widget configuration</span
+            >
+            <span class="cntContent" style="color: rgb(101, 101, 101)"
+              >5899</span
+            >
+          </div>
 
-              <div class="carddscr">
-                <!--     
+          <div class="carddscr">
+            <!--     
               {{ slide.dscr }}
                    -->
-              </div>
-            </mat-card-content>
+          </div>
+        </mat-card-content>
 
-            <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
-          </mat-card>
-        </div>
-      </ngx-slick-carousel>
-
-      <!-- <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-    <button (click)="slickModal.unslick()">unslick</button> -->
+        <!-- <mat-card-footer>{{ slide.totalCount }}</mat-card-footer> -->
+      </mat-card>
     </div>
   </ngx-slick-carousel>
 
   <!-- <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-  <button (click)="slickModal.unslick()">unslick</button> -->
+    <button (click)="slickModal.unslick()">unslick</button> -->
 </div>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CountWidgetsComponent } from './count-widgets.component';
+import { NewCountCardComponent } from './new-count-card.component';
 
-describe('CountWidgetsComponent', () => {
-  let component: CountWidgetsComponent;
-  let fixture: ComponentFixture<CountWidgetsComponent>;
+describe('NewCountCardComponent', () => {
+  let component: NewCountCardComponent;
+  let fixture: ComponentFixture<NewCountCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CountWidgetsComponent]
+      declarations: [NewCountCardComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CountWidgetsComponent);
+    fixture = TestBed.createComponent(NewCountCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,4 +21,3 @@ describe('CountWidgetsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
- 

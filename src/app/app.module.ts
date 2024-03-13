@@ -24,6 +24,9 @@ import { StatisticsSectionComponent } from './statistics-section/statistics-sect
 import { ViewAllRecentContractsCompComponent } from './view-all-recent-contracts-comp/view-all-recent-contracts-comp.component';
 import { ViewAttachementsComponentComponent } from './view-attachements-component/view-attachements-component.component';
 import { EquipmentDataTableComponent } from './equipment-data-table/equipment-data-table.component';
+import { NewCountCardComponent } from './new-count-card/new-count-card.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -47,12 +50,14 @@ import { EquipmentDataTableComponent } from './equipment-data-table/equipment-da
     ViewAllRecentContractsCompComponent,
     ViewAttachementsComponentComponent,
     EquipmentDataTableComponent,
+    NewCountCardComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    FontAwesomeModule
     
   ],
   providers: [

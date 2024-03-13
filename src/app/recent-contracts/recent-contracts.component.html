@@ -1,10 +1,4 @@
 <div class="recentContractsSection" style="border-radius: 0 0 1rem 1rem">
-  <!-- 
-  <div class="viewAllRecordsModal" *ngIf="viewAllRecords">
-    hello
-    <button (click)="toggleViewAllRecords()">close</button>
-  </div> -->
-  <!-- Button trigger modal -->
 
   <!-- Modal -->
   <div
@@ -17,9 +11,7 @@
     style="
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(15px);
-      
+      background-color: rgba(0, 0, 0, 0.5);
     "
   >
     <div class="modal-dialog modal-lg" role="document">
@@ -37,7 +29,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" style="overflow-y: scroll;height: 30rem;">
+        <div class="modal-body" style="overflow-y: scroll; height: 30rem">
           <app-view-all-recent-contracts-comp></app-view-all-recent-contracts-comp>
         </div>
         <div class="modal-footer">
@@ -59,8 +51,7 @@
     style="
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(15px);
+      background-color: rgba(0, 0, 0, 0.5);
     "
   >
     <div class="modal-dialog modal-lg" role="document">
@@ -98,32 +89,42 @@
   </div>
 
   <div
+    class="modal fade"
+    id="createContractModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="viewAttachementsModalTitle"
+    aria-hidden="true"
+    style="
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      
+    "
+  >
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content" style="background-color: transparent; border: none;">
+       
+        <div
+          class="modal-body"
+          style="padding: 0 !important;border-radius: 5rem !important; "
+        >
+          <app-create-rental-contract></app-create-rental-contract>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div
     class="mat-elevation-z3"
     style="border-radius: 0 0 1rem 1rem"
     [ngClass]="modalOpen ? 'tableBlurred' : ''"
   >
     <div class="tableTop" style="border-radius: 0 0 1rem 1rem">
       <div class="setionHeader">
-        <!-- Recently Created Rental Contracts -->
-        <!-- <button
-          type="button"
-          class="btn"
-          style="
-            background-color: #ececec;
-            color: rgb(125, 118, 207);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 30px;
-            width: 90px;
-            padding: 0;
-          "
-        >
-          <mat-icon class="sideNav-link-icon">delete</mat-icon>Delete
-        </button> -->
       </div>
-      <!-- <mat-form-field> -->
-      <!-- <mat-label>Search</mat-label> -->
       <input
         style="display: none"
         class="searchbar"
@@ -131,20 +132,6 @@
         placeholder="Ex. Test1"
         #input
       />
-      <!-- <mat-form-field class="example-form-field">
-        <mat-date-range-input
-          [formGroup]="campaignOne"
-          [rangePicker]="campaignOnePicker"
-          [comparisonStart]="campaignTwo.value.start"
-          [comparisonEnd]="campaignTwo.value.end">
-          <input matStartDate placeholder="Start date" formControlName="start">
-          <input matEndDate placeholder="End date" formControlName="end">
-        </mat-date-range-input>
-        <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
-        <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
-      </mat-form-field> -->
-
-      <!-- </mat-form-field> -->
       <div class="btn-group" role="group" aria-label="Basic example">
         <button
           type="button"
@@ -165,7 +152,14 @@
           <mat-icon class="sideNav-link-icon">refresh</mat-icon>
         </button>
         <button type="button" class="btn btn-secondary">
-          <mat-icon class="sideNav-link-icon">toggle_off</mat-icon>
+          <mat-icon
+            class="sideNav-link-icon"
+            matTooltip="Create Contract"
+            matTooltipPosition="below"
+            data-toggle="modal"
+            data-target="#createContractModal"
+            >edit_square</mat-icon
+          >
         </button>
         <button
           type="button"
@@ -193,6 +187,7 @@
         </button>
       </div>
     </div>
+
     <table
       mat-table
       [dataSource]="dataSource"
@@ -262,13 +257,13 @@
         <td mat-cell *matCellDef="let row">{{ row.tDsca }}</td>
       </ng-container>
 
-      <!-- Fruit Column -->
+      <!-- Warehouse Column -->
       <ng-container matColumnDef="tIwar">
         <th
           class="tblheader"
           mat-header-cell
           *matHeaderCellDef
-          style="padding-right: 5px"
+          style="padding-right: 5px; width: 10%;"
         >
           <div class="fcol2">
             <span class="thHeader" mat-sort-header>Warehouse</span>
@@ -283,12 +278,34 @@
         <td mat-cell *matCellDef="let row">{{ row.tIwar }}</td>
       </ng-container>
 
+      <!-- Status Column -->
+      <ng-container matColumnDef="tCsta">
+        <th
+          class="tblheader"
+          mat-header-cell
+          *matHeaderCellDef
+          style="padding-right: 5px;width: 10%;"
+        >
+          <div class="fcol2">
+            <span class="thHeader" mat-sort-header>Status</span>
+            <input
+              class="searchbar"
+              (keyup)="applyFilter($event)"
+              #input
+              style="border: none; width: 100%"
+            />
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.tCsta }}</td>
+      </ng-container>
+
+      <!-- Documents Column -->
       <ng-container matColumnDef="documents">
         <th
           class="tblheader"
           mat-header-cell
           *matHeaderCellDef
-          style="width: 3% !important"
+          style="width: 3%;"
         >
           <div class="fcol2">
             <span class="thHeader" mat-sort-header style="border: none"
@@ -343,89 +360,3 @@
   </div>
 </div>
 
-<!-- view attatchements custom modal code -->
-
-<!-- <div
-  role="document"
-  *ngIf="modalOpen"
-  style="
-    position: fixed;
-    top: 30px;
-    width: 80% !important;
-    height: 80% !important;
-    left: 10%;
-  "
->
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Documents</h5>
-      <button
-        type="button"
-        class="close"
-        data-dismiss="modal"
-        aria-label="Close"
-        (click)="toggleModalOpen()"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body" style="height: 30rem !important">
-      <p-galleria
-        [value]="iframes"
-        [responsiveOptions]="responsiveOptions"
-        [containerStyle]="{ 'max-width': '100%' }"
-        [numVisible]="5"
-        style="margin: auto; height: 100% !important"
-      >
-        <ng-template pTemplate="item" let-item>
-          <iframe
-            [src]="item.iframeSrc"
-            style="width: 100%; height: 25rem !important; border: none"
-          ></iframe>
-        </ng-template>
-        <ng-template pTemplate="thumbnail" let-item>
-          <div
-            class="grid grid-nogutter justify-content-center"
-            style="
-              height: 3rem;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <mat-icon
-              style="
-                background-color: white;
-                color: black;
-                border-radius: 50%;
-                height: 2rem;
-                width: 2rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: none;
-              "
-              >edit</mat-icon
-            >
-          </div>
-        </ng-template>
-      </p-galleria>
-
-     
-    
-    </div>
-    <div class="modal-footer">
-      <button
-        type="button"
-        class="btn btn-secondary"
-        data-dismiss="modal"
-        (click)="toggleModalOpen()"
-      >
-        Close
-      </button>
-      <button type="button" class="btn btn-primary" (click)="toggleModalOpen()">
-        Ok
-      </button>
-    </div>
-  </div>
-</div> -->

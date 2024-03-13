@@ -1,17 +1,17 @@
-<div
-  class="crcCont"
-  style="
-    background-color: rgba(242, 243, 247, 0.7);
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-  "
->
-  <div class="createRCSection mat-elevation-z3">
-    <h2 style="color: rgb(158, 158, 158)">Create Rental Contract</h2>
+
+  <div class="createRCSection">
+    <h2
+      style="
+        color: rgb(158, 158, 158);
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      "
+    >
+      <mat-icon>edit_square</mat-icon>
+      <div>Create Rental Contract</div>
+      <div data-dismiss="modal" style="position: absolute;top:0rem; right: 1rem; cursor: pointer;">x</div>
+    </h2>
     <mat-divider></mat-divider>
 
     <div class="tabsContainer">
@@ -54,7 +54,7 @@
             <mat-icon>attach_file</mat-icon>
           </div>
           <div class="sthtxt">
-            Documents
+            Add Attachements
             <p>Attach Documents and Images to the Rental Contract</p>
           </div>
         </div>
@@ -67,7 +67,7 @@
           <div class="sthicon">
             <mat-icon>verified</mat-icon>
           </div>
-          <div class="sthtxt">Submit</div>
+          <div class="sthtxt" style="padding: 0">View Summary</div>
         </div>
       </div>
 
@@ -168,7 +168,6 @@
                 >
                   <div class="cntDetailsContent">
                     <div class="detailsRequired">
-
                       <div class="inputetails" style="margin-top: 0.8rem">
                         <div class="col-sm-6 inputDetSection">
                           <label
@@ -256,39 +255,40 @@
                     </div>
 
                     <div class="defaulDetails">
-                      <p style="padding-left: 1rem;margin-top: 0.8rem;">Default</p>
-                        <div class="inputetails" >
-                          <div class="col-sm-6 inputDetSection">
-                            <label
-                              class="form-label"
-                              for="exampleFormControlInput1"
-                              >Contract No. :
-                              <span style="color: rgb(240, 29, 29)"
-                                >*</span
-                              ></label
-                            >
-                            <input
-                              class="form-control"
-                              id="exampleFormControlInput1"
-                              type="text"
-                              disabled="true"
-                              value="RCA101989"
-                              style="
-                                width: 90%;
-                                height: 1.5rem !important;
-                                font-size: 0.8rem;
-                                color: #495057;
-                              "
-                            />
-                          </div>
+                      <p style="padding-left: 1rem; margin-top: 0.8rem">
+                        Default
+                      </p>
+                      <div class="inputetails">
+                        <div class="col-sm-6 inputDetSection">
+                          <label
+                            class="form-label"
+                            for="exampleFormControlInput1"
+                            >Contract No. :
+                            <span style="color: rgb(240, 29, 29)"
+                              >*</span
+                            ></label
+                          >
+                          <input
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            type="text"
+                            disabled="true"
+                            value="RCA101989"
+                            style="
+                              width: 90%;
+                              height: 1.5rem !important;
+                              font-size: 0.8rem;
+                              color: #495057;
+                            "
+                          />
+                        </div>
 
                         <div class="col-sm-6 inputDetSection">
                           <label
                             class="form-label"
                             for="exampleFormControlInput1"
                             >Contract Type :
-                            </label
-                          >
+                          </label>
                           <input
                             class="form-control"
                             id="exampleFormControlInput1"
@@ -354,12 +354,17 @@
                           />
                         </div>
                       </div>
-
-                      
                     </div>
                   </div>
 
-                  <div class="actionsSection" style="margin-top: 0; border-top: 2px dotted rgb(210, 210, 210); padding-top: 0.5rem;">
+                  <div
+                    class="actionsSection"
+                    style="
+                      margin-top: 0;
+                      border-top: 2px dotted rgb(210, 210, 210);
+                      padding-top: 0.5rem;
+                    "
+                  >
                     <button class="CRCNextButton" (click)="showAddLinesTab()">
                       Next
                     </button>
@@ -419,11 +424,10 @@
 
         <div class="rightTabs" *ngIf="fourth">
           <p class="rightTabHeader">
-            Submit
+            Contract Summary
             <mat-divider></mat-divider>
           </p>
         </div>
       </div>
     </div>
   </div>
-</div>

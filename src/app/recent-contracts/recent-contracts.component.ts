@@ -40,6 +40,7 @@ export class RecentContractsComponent {
     'tMcod',
     'tDsca',
     'tIwar',
+    'tCsta',
     'documents'
   ]
   // displayedColumns: string[] = ['tRcno'];

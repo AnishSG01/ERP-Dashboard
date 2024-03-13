@@ -1,6 +1,6 @@
 
 
-.countWidgets{
+.countWidgets{ 
     padding: 0;
     margin-bottom: 1.5rem;
     height: 150px;
@@ -11,7 +11,7 @@
     
    
     width: 100%;
-    // border: 2px soild black;
+    // background-color:  black;
     // .countCard{
     //     width: 250px;
     //     height: 80%;
@@ -47,10 +47,9 @@
 
 .carousel{
     // background-color: #fff;
-    width: 95%;
+    width: 100%;
     // border: 2px solid red;
-    
-
+    padding: 0 !important;
 
     .slide{
         // border: 3px solid black;
@@ -130,7 +129,7 @@ mat-card-footer{
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 30px;
+    font-size: 1.1rem;
     font-weight: 200;
     
     border-radius: 10px;
@@ -212,4 +211,8 @@ mat-card-footer{
 //         font-size: 12px;
 //         font-weight: 500;
 //     }
+// }
+
+// .slick-prev, .slick-next{
+//     display: none !important;
 // }

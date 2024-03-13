@@ -1,5 +1,5 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output, ViewChild, ElementRef } from '@angular/core';
 
 interface sideNavToggle{
   screenWidth: number;
@@ -23,6 +23,18 @@ interface sideNavToggle{
   ]
 })
 export class SideNavBarComponent implements OnInit {
+
+  @ViewChild('fileInput') fileInput !: ElementRef;
+
+  openFileExplorer() {
+    this.fileInput.nativeElement.click();
+  }
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    console.log(file); // You can do whatever you want with the selected file
+  }
+
 
   @Output() onToggleSideNav: EventEmitter<sideNavToggle> = new EventEmitter();
   collapsed = false;

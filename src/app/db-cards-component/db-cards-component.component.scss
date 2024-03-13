@@ -13,8 +13,9 @@
         height: 28rem;
         padding: 0.8rem;
         border: 1px dashed #efefef;
-        background-color: rgba(13, 167, 89, 0.1);
-        cursor: pointer;
+        // background-color: rgba(13, 167, 89, 0.1);
+        background-color: transparent;
+       
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -98,7 +99,7 @@
                 // line-height: 1.4;
                 letter-spacing: 0.7px;
                 // height: 1rem !important;
-                background-color: rgba(110, 100, 176, 0.1);
+                // background-color: rgba(110, 100, 176, 0.1);
                 // border: 1px solid red;
             }
 

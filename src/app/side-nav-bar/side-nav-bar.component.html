@@ -1,63 +1,118 @@
-<div class="sideNav"  [ngClass]="collapsed?'sideNav-collapsed':''">
-    <div class="logoContainer">
-        <button class="logo" (click)="toggleCollapse()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSideNav()">
-            <mat-icon>close</mat-icon>
-        </button>
+<div class="sideNav" [ngClass]="collapsed ? 'sideNav-collapsed' : ''">
+  <div class="logoContainer">
+    <button class="logo" (click)="toggleCollapse()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
 
+  <div class="profile" *ngIf="collapsed" >
+    
+    <div class="userIconDiv" matTooltip="Upload Image" matTooltipPosition="above">
+        <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)" />
+        <mat-icon class="userIcon" (click)="openFileExplorer()">person</mat-icon>
     </div>
+    <p>Anish Ghogare</p>
+    
+  </div>
 
-    <ul class="sideNav-Nav">
-        <li class="sideNav-nav-item"  matTooltip="Dashboard" matTooltipPosition="after">
-            <a class="sideNav-link" routerLink="dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                <mat-icon class="sideNav-link-icon">dashboard</mat-icon>
-                <span class="sideNav-link-text" *ngIf="collapsed">Dashboard</span>
-                <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Dashboard</span> -->
-            </a>
-        </li>
+  <ul class="sideNav-Nav">
+    <li
+      class="sideNav-nav-item"
+      matTooltip="Dashboard"
+      matTooltipPosition="after"
+    >
+      <a
+        class="sideNav-link"
+        routerLink="dashboard"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon class="sideNav-link-icon">dashboard</mat-icon>
+        <span class="sideNav-link-text" *ngIf="collapsed">Dashboard</span>
+        <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Dashboard</span> -->
+      </a>
+    </li>
 
-        
+    <li class="sideNav-nav-item" matTooltip="Sales" matTooltipPosition="after">
+      <a
+        class="sideNav-link"
+        routerLink="sales"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon class="sideNav-link-icon">payments</mat-icon>
+        <span class="sideNav-link-text" *ngIf="collapsed">Sales</span>
+        <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Sales</span> -->
+      </a>
+    </li>
 
-        <li class="sideNav-nav-item"  matTooltip="Sales" matTooltipPosition="after">
-            <a class="sideNav-link" routerLink="sales" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                <mat-icon class="sideNav-link-icon">payments</mat-icon>
-                <span class="sideNav-link-text" *ngIf="collapsed">Sales</span>
-                <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Sales</span> -->
-            </a>
-        </li>
+    <li
+      class="sideNav-nav-item"
+      matTooltip="Purchase"
+      matTooltipPosition="after"
+    >
+      <a
+        class="sideNav-link"
+        routerLink="purchase"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon class="sideNav-link-icon">local_mall</mat-icon>
+        <span class="sideNav-link-text" *ngIf="collapsed">Purchase</span>
+        <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Purchase</span> -->
+      </a>
+    </li>
 
-        <li class="sideNav-nav-item"  matTooltip="Purchase" matTooltipPosition="after">
-            <a class="sideNav-link" routerLink="purchase" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                <mat-icon class="sideNav-link-icon">local_mall</mat-icon>
-                <span class="sideNav-link-text" *ngIf="collapsed">Purchase</span>
-                <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Purchase</span> -->
-            </a>
-        </li>
+    <li
+      class="sideNav-nav-item"
+      matTooltip="Inventory"
+      matTooltipPosition="after"
+    >
+      <a
+        class="sideNav-link"
+        routerLink="inventory"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon class="sideNav-link-icon">inventory</mat-icon>
+        <span class="sideNav-link-text" *ngIf="collapsed">Inventory</span>
+        <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Inventory</span> -->
+      </a>
+    </li>
 
-        <li class="sideNav-nav-item"  matTooltip="Inventory" matTooltipPosition="after">
-            <a class="sideNav-link" routerLink="inventory" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                <mat-icon class="sideNav-link-icon">inventory</mat-icon>
-                <span class="sideNav-link-text" *ngIf="collapsed">Inventory</span>
-                <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Inventory</span> -->
-            </a>
-        </li>
+    <!-- <li
+      class="sideNav-nav-item"
+      matTooltip="Create Rental Contract"
+      matTooltipPosition="after"
+    >
+      <a
+        class="sideNav-link"
+        routerLink="create/contract"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon class="sideNav-link-icon">edit_square</mat-icon>
+        <span class="sideNav-link-text" *ngIf="collapsed"
+          >Create Rental Contract</span
+        >
+      </a>
+    </li> -->
 
-        <li class="sideNav-nav-item"  matTooltip="Create Rental Contract" matTooltipPosition="after">
-            <a class="sideNav-link" routerLink="create/contract" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                <mat-icon class="sideNav-link-icon">edit_square</mat-icon>
-                <span class="sideNav-link-text" *ngIf="collapsed">Create Rental Contract</span>
-                <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Inventory</span> -->
-            </a>
-        </li>
-
-        <li class="sideNav-nav-item"  matTooltip="Calendar" matTooltipPosition="after">
-            <a class="sideNav-link" routerLink="calendar" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                <mat-icon class="sideNav-link-icon">calendar_month</mat-icon>
-                <span class="sideNav-link-text" *ngIf="collapsed">Calendar</span>
-                <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Inventory</span> -->
-            </a>
-        </li>
-    </ul>
+    <li
+      class="sideNav-nav-item"
+      matTooltip="Calendar"
+      matTooltipPosition="after"
+    >
+      <a
+        class="sideNav-link"
+        routerLink="calendar"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon class="sideNav-link-icon">calendar_month</mat-icon>
+        <span class="sideNav-link-text" *ngIf="collapsed">Calendar</span>
+        <!-- <span class="sideNav-link-dscr" *ngIf="!collapsed">Inventory</span> -->
+      </a>
+    </li>
+  </ul>
 </div>
