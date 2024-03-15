@@ -60,12 +60,21 @@
                     {{ row.tRcno }}
                   </td>
                 </ng-container>
+
                 <ng-container matColumnDef="tIntp">
                   <td class="tbDescView" *matHeaderCellDef>Inv. Type</td>
                   <td class="tbValueView" *matCellDef="let row">
                     {{ row.tIntp }}
                   </td>
                 </ng-container>
+
+                <ng-container matColumnDef="tEqup">
+                  <td class="tbDescView" *matHeaderCellDef>Equipment</td>
+                  <td class="tbValueView" *matCellDef="let row">
+                    {{ row.tEqup }}
+                  </td>
+                </ng-container>
+                
                 <tr mat-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr
                   mat-row

@@ -1,17 +1,31 @@
 <div class="sideNav" [ngClass]="collapsed ? 'sideNav-collapsed' : ''">
+
+
+  <div class="companyLogoSection">
+    <img class="cmpIcon" src="../../assets/images/companyIcon.png" alt="" *ngIf="!collapsed" >
+    <div class="cmpLogo" *ngIf="collapsed">
+      <img class="logImg1" src="../../assets/images/companyIcon.png" alt=""  >
+      <img class="logoImg2" src="../../assets/images/VitalEdge Wordmark White.png" alt=""  >
+    </div>
+    
+  </div>
+
   <div class="logoContainer">
     <button class="logo" (click)="toggleCollapse()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
 
+  
+
   <div class="profile" *ngIf="collapsed" >
     
     <div class="userIconDiv" matTooltip="Upload Image" matTooltipPosition="above">
         <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)" />
-        <mat-icon class="userIcon" (click)="openFileExplorer()">person</mat-icon>
+        <!-- <mat-icon class="userIcon" (click)="openFileExplorer()">person</mat-icon> -->
+        <img class="userImg" (click)="openFileExplorer()" src="../../assets/images/user2-160x160.jpg" alt="">
     </div>
-    <p>Anish Ghogare</p>
+    <p>Alexander Pierce </p>
     
   </div>
 

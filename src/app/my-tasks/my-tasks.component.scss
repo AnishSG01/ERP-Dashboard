@@ -10,7 +10,7 @@
     padding-top: 0;
     cursor: pointer;
     overflow-y: scroll;
-    
+
     h2 {
         // border: 1px solid red;
         height: 2rem;
@@ -27,24 +27,27 @@
 
 }
 
+
+
 .myTask::-webkit-scrollbar {
     display: none;
-  }
+}
 
 
 .actFeedCard {
     width: 100%;
     // border: 1px solid red;
-    
+
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0;
     padding: 0.1rem;
 
-    &:hover{
+    &:hover {
         background-color: rgb(238, 238, 238);
     }
+
     .afHeaderIconDiv {
         border: 1px solid #cdcfd5;
         width: 1.7rem;
@@ -54,16 +57,16 @@
         justify-content: center;
         border-radius: 50%;
 
-        .afHeaderIcon{
+        .afHeaderIcon {
             width: 100%;
             height: 100%;
             display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
         }
 
-       
+
     }
 
     .afHeaderTitle {
@@ -72,10 +75,10 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-    align-items: center;
-    justify-content: left;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+        align-items: center;
+        justify-content: left;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 
     .TaskTimestamp {
@@ -87,33 +90,44 @@
         align-items: center;
         justify-content: right;
         color: rgb(138, 148, 173, 1);
-        font-size: .7rem ;
+        font-size: .7rem;
 
-        mat-icon{
-            font-size: 1rem;
+        mat-icon {
+            font-size: 1.1rem;
+            width: max-content;
+            height: max-content;
             width: max-content + 0.2rem;
             display: flex;
-        align-items: center;
-        justify-content: center;
-        height: max-content;
-        border-radius: 0.2rem;
+            align-items: center;
+            justify-content: center;
+            height: max-content;
+            border-radius: 0.2rem;
 
-            &:hover{
+            &:hover {
                 background-color: white;
-                
+
             }
         }
     }
 
 }
 
-.highlightBlue{
+.highlightBlue {
     color: #0080c7;
-    
+
 }
 
 
-
+.cmpnoButton{
+    width: max-content;
+    height: max-content;
+    background-color: rgb(236, 236, 236);
+    color: rgb(94, 101, 96);
+    border: 1px solid rgb(94, 101, 96);
+    border-radius: 0.2rem;
+    padding: 0 1rem;
+    margin-top: 0.3rem;
+}
 
 
 

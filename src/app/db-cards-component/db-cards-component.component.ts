@@ -18,6 +18,7 @@ export class DbCardsComponentComponent implements OnInit {
 
   displayedColumns: string[] = [
     'tRcno',
+    'tEqup',
     'tIntp'
   ]
   dataSource!: MatTableDataSource<any>;
