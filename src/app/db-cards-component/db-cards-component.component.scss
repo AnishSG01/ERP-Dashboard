@@ -11,16 +11,155 @@
     .dbCard {
         width: 27%;
         height: 28rem;
-        padding: 0.8rem;
+        // padding: 0.8rem;
+        padding: 0;
         border: 1px dashed #efefef;
         // background-color: rgba(13, 167, 89, 0.1);
         background-color: transparent;
-       
+
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
 
+        .dbCardInner {
+            width: 100%;
+            height: 100%;
+            padding: 0.8rem !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            // padding: 0;
+            // background-color: rgba(51, 51, 51, 0.6);
+            background-color: rgba(0, 0, 0, 0.75);
+            // opacity: 0.2;
+            // z-index: -1;
+
+
+            .dbCardMainHeader {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 0.5rem;
+            }
+    
+            .dbCardChildHeader {
+                color: rgba(82, 82, 108, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                margin-bottom: 0.5rem;
+                font-size: 14px;
+                line-height: 1.4;
+                letter-spacing: 0.7px;
+    
+                mat-icon {
+                    margin-right: 0.4rem;
+                }
+            }
+    
+            .dbCardCdesc {
+                font-size: 14px;
+                line-height: 1.4;
+                letter-spacing: 0.7px;
+                margin-top: 0.5rem;
+            }
+    
+            .dbCardContendRows {
+                margin-top: 0.8rem;
+                // border: 1px solid red;
+                background: transparent;
+    
+                .tbDesc,
+                .tbDescView {
+                    width: 13rem;
+                    // border: 1px solid red;
+    
+                }
+    
+                .tbValue,
+                .tbDesc {
+                    color: rgba(82, 82, 108, 0.8);
+    
+                    font-size: 14px;
+                    line-height: 1.4;
+                    letter-spacing: 0.7px;
+                    height: 1.5rem;
+    
+    
+                    // border: 1px solid red;
+                }
+    
+                .tbValue {
+                    // border: 1px solid red;
+                    width: 4rem;
+                    text-align: right;
+                }
+    
+                .tbValueView {
+                    width: 4rem;
+                }
+    
+                .tbDescView,
+                .tbValueView {
+                    // color: rgba(82, 82, 108, 0.8);
+                    color: #fff;
+    
+                    font-size: 14px;
+                    // line-height: 1.4;
+                    letter-spacing: 0.7px;
+                    // height: 1rem !important;
+                    // background-color: rgba(110, 100, 176, 0.1);
+                    // border: 1px solid red;
+                }
+    
+                .tbDescView {
+                    background-color: rgba(20, 19, 23, 0.1) !important;
+                }
+            }
+    
+            mat-card-actions {
+                height: 2rem;
+                // border: 1px solid red;
+                // margin-top: 0.8rem;
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // button{
+                //     &:hover ~ .dbCard{
+                //         background-color: black !important;
+                //         // transform: scale(100%);
+                // }
+                // }
+    
+            }
+    
+            mat-card-footer {
+                display: flex;
+                align-items: baseline;
+                justify-content: left;
+                padding: 0 1rem;
+                height: 2rem;
+                // border: 1px solid red;
+                gap: 0.3rem;
+                margin-top: 1rem;
+                // margin-bottom: 0.5rem;
+    
+                mat-progress-bar {
+                    width: 93%;
+    
+                }
+            }
+        }
+
+        background-image: url("../../assets/images/2.jpg");
+        background-size: cover;
+        // &::before{
+        // background-image: url(../../assets/images/1.jpg);
+
+        //     z-index: 100000;
+        // }
 
         // &:hover{
         //     background-color: rgba(0, 0, 0, 0.3) !important;
@@ -28,127 +167,15 @@
         //     transition: all 0.3s ease;
         // }
 
-        .dbCardMainHeader {
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .dbCardChildHeader {
-            color: rgba(82, 82, 108, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            margin-bottom: 0.5rem;
-            font-size: 14px;
-            line-height: 1.4;
-            letter-spacing: 0.7px;
-
-            mat-icon {
-                margin-right: 0.4rem;
-            }
-        }
-
-        .dbCardCdesc {
-            font-size: 14px;
-            line-height: 1.4;
-            letter-spacing: 0.7px;
-            margin-top: 0.5rem;
-        }
-
-        .dbCardContendRows {
-            margin-top: 0.8rem;
-            // border: 1px solid red;
-            background: transparent;
-
-            .tbDesc,
-            .tbDescView {
-                width: 13rem;
-                // border: 1px solid red;
-
-            }
-
-            .tbValue,
-            .tbDesc {
-                color: rgba(82, 82, 108, 0.8);
-
-                font-size: 14px;
-                line-height: 1.4;
-                letter-spacing: 0.7px;
-                height: 1.5rem;
-
-
-                // border: 1px solid red;
-            }
-
-            .tbValue {
-                // border: 1px solid red;
-                width: 4rem;
-                text-align: right;
-            }
-
-            .tbValueView {
-                width: 4rem;
-            }
-
-            .tbDescView,
-            .tbValueView {
-                color: rgba(82, 82, 108, 0.8);
-
-                font-size: 14px;
-                // line-height: 1.4;
-                letter-spacing: 0.7px;
-                // height: 1rem !important;
-                // background-color: rgba(110, 100, 176, 0.1);
-                // border: 1px solid red;
-            }
-
-            .tbDescView{
-                background-color: rgba(20, 19, 23, 0.1) !important;
-            }
-        }
-
-        mat-card-actions {
-            height: 2rem;
-            // border: 1px solid red;
-            // margin-top: 0.8rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            // button{
-            //     &:hover ~ .dbCard{
-            //         background-color: black !important;
-            //         // transform: scale(100%);
-            // }
-            // }
-
-        }
-
-        mat-card-footer {
-            display: flex;
-            align-items: baseline;
-            justify-content: left;
-            padding: 0 1rem;
-            height: 2rem;
-            // border: 1px solid red;
-            gap: 0.3rem;
-            margin-top: 1rem;
-            // margin-bottom: 0.5rem;
-
-            mat-progress-bar {
-                width: 93%;
-
-            }
-        }
+       
     }
 
 
 }
 
-.dbCard:has(.dbCardButton:hover) {
+.dbCardInner:has(.dbCardButton:hover) {
     transition: all 0.5s;
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
 }
 
 .viewTable:has(.dbCardButton:hover) {
@@ -175,7 +202,7 @@
     padding: 0;
     line-height: 0.2rem;
     background-color: transparent;
-    color: rgba(82, 82, 108, 0.8);
+    color: #fff;
 
     font-size: 14px;
     letter-spacing: 0.7px;
@@ -195,10 +222,10 @@ mat-card-actions {
     // letter-spacing: 1rem;
     display: flex;
     justify-content: space-between !important;
-    
+
 }
 
-.actionsOnDetailsVisible{
+.actionsOnDetailsVisible {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -209,7 +236,12 @@ mat-card-actions {
 //     display: none !important;
 // }
 
-::ng-deep .mat-mdc-paginator-range-label{
+::ng-deep .mat-mdc-paginator-range-label {
     text-align: right;
     margin: 0 !important;
+}
+
+.mat-mdc-table{
+    background-color: transparent;
+    color: #fff;
 }

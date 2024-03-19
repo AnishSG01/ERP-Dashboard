@@ -149,7 +149,7 @@
         <button
           type="button"
           class="btn btn-secondary"
-          matTooltip="View All Records"
+          matTooltip="{{viewSingleRecord}}"
           matTooltipPosition="below"
         >
           <mat-icon
@@ -190,7 +190,12 @@
           <input type="checkbox" name="" id="" style="height: 100%" />
         </th>
         <td mat-cell *matCellDef="let row">
-          <input type="checkbox" name="" id="" />
+          <input
+            type="checkbox"
+            name=""
+            id=""
+            (click)="toggleViewSingleRecord()"
+          />
         </td>
       </ng-container>
 

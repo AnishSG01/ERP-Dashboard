@@ -22,6 +22,22 @@ const year = today.getFullYear();
 export class RecentContractsComponent {
 
 
+  viewSingleRecord : string = "View all Contracts";
+
+
+viewSingleRecordToggleValue = false
+
+  toggleViewSingleRecord(){
+    this.viewSingleRecordToggleValue = !this.viewSingleRecordToggleValue;
+    if (this.viewSingleRecordToggleValue) {
+      this.viewSingleRecord = "View Contract"
+    }
+    else{
+      this.viewSingleRecord =  "View all Contracts"
+    }
+  }
+
+
   campaignOne = new FormGroup({
     start: new FormControl(new Date(year, month, 13)),
     end: new FormControl(new Date(year, month, 16)),

@@ -13,7 +13,7 @@ export interface EquipmentModel {
 }
 
 const ELEMENT_DATA: EquipmentModel[] = [
-  {manufacturer: 'GM', equipment: 'MD0011026', serial: 'A-10', physicalStatus: 'Rent', warehouse: 'WH01', position: 0},
+  {manufacturer: 'GM', equipment: 'RCA101989', serial: 'A-10', physicalStatus: 'Rent', warehouse: 'WH01', position: 0},
   {manufacturer: 'GM', equipment: 'MD0010871', serial:'4563', physicalStatus: 'Sold', warehouse: 'WH01', position: 1},
   {manufacturer: 'GM', equipment: 'MD0010872', serial:'YHG120093', physicalStatus: 'Sold', warehouse: 'WH01', position: 2},
   {manufacturer: 'GM', equipment: 'MD0010873', serial:'ABCDXYZ', physicalStatus: 'On Order', warehouse: 'WH01', position: 3},

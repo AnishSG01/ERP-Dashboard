@@ -1,9 +1,16 @@
 <h1 style="margin-left: 1rem;">My Tasks</h1>
 <div class="taskCalendar">
     
-    <full-calendar class="mat-elevation-z5" [options]="calendarOptions"></full-calendar>
+    <full-calendar #fullcalendar class="mat-elevation-z5" [options]="calendarOptions"></full-calendar>
     <div class="calendarTools mat-elevation-z5">
         <h2>Toolbar</h2>
+        <!-- Input boxes for title, start date, and color -->
+        <input type="text" placeholder="Title" #titleInput>
+        <input type="date" placeholder="Start Date" #startDateInput>
+        <input type="color" #colorInput>
+
+        <!-- Button to add a new event -->
+        <button (click)="addEvent(titleInput.value, startDateInput.value, colorInput.value)">Add New Event</button>
     </div>
 </div>
-  
+   

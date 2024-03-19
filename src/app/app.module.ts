@@ -26,6 +26,7 @@ import { ViewAttachementsComponentComponent } from './view-attachements-componen
 import { EquipmentDataTableComponent } from './equipment-data-table/equipment-data-table.component';
 import { NewCountCardComponent } from './new-count-card/new-count-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ChartModule } from 'angular-highcharts';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ChartModule
     
   ],
   providers: [
